@@ -1,0 +1,31 @@
+{
+  "lang": "en-US",
+  "label": "English",
+  "prefix": "",
+  "description": "Dae Universe Linux packages and dae installation, configuration and development documentation.",
+  "labels": {
+    "install": "Install",
+    "packages": "Packages",
+    "maintenance": "Maintenance",
+    "installation": "Installation",
+    "reference": "Reference",
+    "debian": "Debian / Ubuntu",
+    "rpm": "Fedora / openSUSE",
+    "available": "Available packages",
+    "services": "Services & certificates",
+    "outline": "On this page",
+    "previous": "Previous page",
+    "next": "Next page",
+    "copy": "Copy code",
+    "copied": "Copied",
+    "footer": "Dae Universe Linux Repository · Package licenses are listed in the package reference.",
+    "permalink": "Permalink to",
+    "gentoo": "Gentoo / Calculate",
+    "manual": "Guide",
+    "configuration": "Configuration",
+    "development": "Development",
+    "userGuide": "Usage",
+    "tutorials": "Other platforms"
+  },
+  "theme": {}
+}
