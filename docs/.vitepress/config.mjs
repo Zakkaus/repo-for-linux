@@ -38,6 +38,7 @@ function localeConfig({ lang, label, prefix, description, labels: t, theme }) {
         { text: t.development, collapsed: false, items: manualItems('development') },
         { text: t.reference, items: [
           { text: t.available, link: `${prefix}/guide/packages` },
+          { text: t.gentoo, link: `${prefix}/guide/packages/gentoo` },
           { text: t.services, link: `${prefix}/guide/maintenance` }
         ] }
       ],
