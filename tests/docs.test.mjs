@@ -9,7 +9,7 @@ import { createHash } from 'node:crypto'
 import { locales } from '../docs/.vitepress/locales.mjs'
 
 const root = fileURLToPath(new URL('../', import.meta.url))
-const commands = text => [...text.matchAll(/```(?:sh|text)\n([\s\S]*?)```/g)].map(match => match[1])
+const commands = text => [...text.matchAll(/```(?:sh|text)(?: \[[^\n]+\])?\n([\s\S]*?)```/g)].map(match => match[1])
 
 function fencedCodeHashes(text) {
   const hashes = []
@@ -59,6 +59,20 @@ test('translated documents preserve routes, commands and required messages', asy
   }
 })
 
+test('installation privilege tabs preserve the same commands', async () => {
+  for (const name of ['debian', 'rpm', 'gentoo']) {
+    const page = await readFile(join(root, `docs/guide/${name}.md`), 'utf8')
+    const tabs = [...page.matchAll(/```sh \[([^\n]+)\]\n([\s\S]*?)```/g)]
+    assert.ok(tabs.length > 0 && tabs.length % 2 === 0, name)
+    for (let i = 0; i < tabs.length; i += 2) {
+      assert.match(tabs[i][1], /sudo$/)
+      assert.match(tabs[i + 1][1], /root$/)
+      assert.equal(tabs[i][2].replace(/^sudo /gm, ''), tabs[i + 1][2], name)
+      assert.ok(tabs[i][2].trim().split('\n').every(line => line.startsWith('sudo ')), name)
+    }
+  }
+})
+
 test('all package references include the same generated data; malformed data fails', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'dae-docs-'))
   try {
@@ -96,6 +110,7 @@ test('every upstream topic exists in every locale and retains its original examp
       assert.equal(entry.fallback, false, `${entry.path} still uses a fallback language`)
       assert.ok(page.includes(`lang="${locale.lang}"`), entry.path)
       assert.ok(page.includes(`/blob/${manifest.revision}/${entry.source}`), entry.path)
+      assert.ok(page.indexOf(`/blob/${manifest.revision}/${entry.source}`) > page.lastIndexOf('</div>'), `${entry.path}: source notice must follow the article`)
       assert.deepEqual(fencedCodeHashes(page), entry.sourceCodeSha256, `${entry.path}: upstream code changed`)
       assert.ok((page.match(/^#{1,6} /gm) || []).length >= entry.sourceHeadingCount, `${entry.path}: missing sections`)
     }

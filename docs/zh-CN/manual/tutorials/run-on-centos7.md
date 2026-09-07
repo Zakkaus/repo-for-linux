@@ -2,12 +2,6 @@
 title: "CentOS 7"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-centos7.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-
-上游示例使用 dae v0.2.2 和第三方内核仓库。本页保留历史步骤，不将该版本作为当前安装建议。
-:::
-
 <div v-pre lang="zh-CN">
 
 # CentOS 7
@@ -85,3 +79,9 @@ DAE_LOCATION_ASSET=$(pwd) ./dae-linux-x86_64 run -c config.dae
 ```
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-centos7.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+
+上游示例使用 dae v0.2.2 和第三方内核仓库。本页保留历史步骤，不将该版本作为当前安装建议。

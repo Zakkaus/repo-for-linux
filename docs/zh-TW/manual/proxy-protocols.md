@@ -2,10 +2,6 @@
 title: "代理協定"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/proxy-protocols.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 代理協定
@@ -109,3 +105,7 @@ title: "代理協定"
    僅繫結 LAN 介面的使用者不需要執行此步驟。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/proxy-protocols.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

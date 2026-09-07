@@ -2,10 +2,6 @@
 title: "OPNsense"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/dae-with-opnsense.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # OPNsense
@@ -103,3 +99,7 @@ server:
 将 OPN 与 dae 之间的 MTU 值从默认 1500 改为 9000（需修改两个接口和中间链路），可实现更低负载。
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/dae-with-opnsense.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

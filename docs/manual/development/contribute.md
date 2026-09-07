@@ -2,10 +2,6 @@
 title: "Contributing"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/development/contribute.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # Contributing
@@ -60,3 +56,7 @@ And last but not least: Always write your commit messages in the present tense. 
 Please do not ping your reviewer(s) by mentioning them in a new comment. Instead, use the re-request review functionality. Read more about this in the [GitHub docs, Re-requesting a review](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request#re-requesting-a-review).
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/development/contribute.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

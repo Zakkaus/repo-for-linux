@@ -2,10 +2,6 @@
 title: "macOS / Lima"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-macos.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # macOS / Lima
@@ -271,3 +267,7 @@ launchctl load ~/Library/LaunchAgents/org.v2raya.dae.networkchanging.plist
 ```
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-macos.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

@@ -3,17 +3,27 @@
 The site helps Linux users install packages and find maintenance instructions.
 VitePress's default theme owns typography, spacing, colors, navigation, code-copy controls,
 search and responsive behavior. Use its home-page actions and documentation layout without
-custom geometry or duplicated Vue components. Both light and dark themes use upstream defaults.
+custom geometry or duplicated Vue components. Both modes retain upstream neutral colors.
+The brand palette uses dark amber in light mode and soft gold in dark mode.
+`theme/index.mjs` re-exports the default theme; `theme/brand.css` overrides only official
+brand tokens and dark-mode brand-button text tokens. Dark text on gold buttons preserves
+contrast. Keep layout, typography and component styles in the upstream theme.
+The footer uses the official message option for a single Dae Universe and GitHub line;
+package licenses remain in the package reference.
 The header follows the official layout: language, appearance and social controls remain on
 the right at desktop widths, with the default theme's responsive menus on narrower screens.
 Do not reorder these controls through CSS, transformed components or replacement navigation.
 
 ## Brand asset
 
-`public/daeuniverse.jpg` is the unmodified GitHub organization avatar from
-https://avatars.githubusercontent.com/u/126714249?v=4&s=256 (retrieved 2026-09-07).
-It is served locally as the navigation logo and favicon in every locale and theme.
-The asset identifies daeuniverse; no separate image license is asserted.
+`public/daeuniverse-hero.png` is the color goose illustration used through the default
+homepage `hero.image` option. `public/daeuniverse.png` is its grayscale version for the
+navigation logo; `public/daeuniverse-favicon.png` is a 64px favicon derived from it.
+All three are transparent PNGs derived from the user-provided 640px image
+`photo_2023-03-26_06-49-49.jpg`. Background removal cleans yellow edge spill while
+retaining the yellow beak and white feather fills. These replace the lower-resolution
+GitHub avatar; no generated redraw or custom image-layout CSS is used.
+The artwork identifies daeuniverse; no separate image license is asserted.
 
 ## Content and languages
 
@@ -35,8 +45,11 @@ text because this release exposes no translation option for it.
 English is the canonical source for shared topics; the Chinese-only refactoring validation
 plan uses the Chinese source. Both Chinese locales have independently authored translations.
 The upstream revision, original paths, source hashes and fenced-code hashes are recorded in
-`.vitepress/upstream.json`. Each page links to its pinned source and the copied AGPL license.
-The network-stack illustration is copied into `public/upstream/`.
+`.vitepress/upstream.json`. Each page ends with links to its pinned source and the copied AGPL license.
+The original network-stack illustration is copied into `public/upstream/`. A derived
+`netstack-path-dark.png` brightens dark labels and lines for dark mode. Three image
+visibility rules follow the theme class; the diagram is not globally inverted or placed
+on a white panel. Both variants retain the same diagram layout.
 
 These are attributed upstream documents, including historical examples. They are separate
 from this repository's APT/RPM installation instructions. Preserve their conditions and code;
@@ -99,3 +112,16 @@ full site URL and base path from `actions/configure-pages` and builds with expli
 Only successful checks on the selected branch can deploy; pull requests cannot deploy.
 The build jobs have read permissions, and only the deployment job receives Pages write
 and OIDC permissions. Repositories without the opt-in variable keep checks and artifacts.
+
+## Document presentation
+
+APT and RPM alternatives use native code groups, keeping commands unchanged. Installation
+commands provide sudo and root tabs; their only difference is the leading sudo prefix.
+Use sudo tabs only when sudo is configured. Gentoo
+prerequisites and existing-overlay advice use native callouts; optional mirror information
+uses a details block. Its community-maintained badge describes ownership, not stability.
+
+The official edit-link option points to upstream main by default. `DOCS_EDIT_URL` can
+provide a preview repository URL containing `:path`; the Pages build sets it from the
+repository and publishing branch. Last-updated dates come from Git history. Build checkouts
+need full history so dates reflect file commits rather than a shallow checkout boundary.

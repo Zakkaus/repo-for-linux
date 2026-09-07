@@ -2,10 +2,6 @@
 title: "故障排查"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/troubleshooting.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # 故障排查
@@ -102,3 +98,7 @@ netstat -ulpen|grep 53
 2. 方法 2：编译时添加 CFLAGS `-D__UNROLL_ROUTE_LOOP`。但这会在 eBPF 加载阶段增加内存占用（或交换空间占用）（约 180MB）。例如，使用 `make CGO_ENABLED=0 GOARCH=arm64 CFLAGS="-D__UNROLL_ROUTE_LOOP"` 为 ARM64 编译 dae。
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/troubleshooting.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

@@ -2,10 +2,6 @@
 title: "Split configuration files"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/separate-config.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # Split configuration files
@@ -143,3 +139,7 @@ dae run -c /etc/dae/config.dae
 ```
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/separate-config.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

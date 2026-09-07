@@ -2,10 +2,6 @@
 title: "重构验证计划"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/zh/development/refactor-validation-plan.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # 重构验证计划
@@ -548,3 +544,7 @@ go test -race ./...
 - 普通全量测试与 race 全量测试均通过。
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/zh/development/refactor-validation-plan.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

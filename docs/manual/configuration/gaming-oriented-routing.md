@@ -2,10 +2,6 @@
 title: "Gaming-oriented routing"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/gaming-oriented-routing.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # Gaming-oriented routing
@@ -84,3 +80,7 @@ config nat
 ```
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/gaming-oriented-routing.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

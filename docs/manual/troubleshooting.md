@@ -2,10 +2,6 @@
 title: "Troubleshooting"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/troubleshooting.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # Troubleshooting
@@ -102,3 +98,7 @@ There are ways to resolve it:
 2. Method 2: Add CFLAGS `-D__UNROLL_ROUTE_LOOP` while compiling. However, it will increse memory occupation (or swap space) at the eBPF loading stage (about 180MB). For example, compile dae to ARM64 using `make CGO_ENABLED=0 GOARCH=arm64 CFLAGS="-D__UNROLL_ROUTE_LOOP"`.
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/troubleshooting.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

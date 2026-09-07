@@ -2,10 +2,6 @@
 title: "拆分配置文件"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/separate-config.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # 拆分配置文件
@@ -143,3 +139,7 @@ dae run -c /etc/dae/config.dae
 ```
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/separate-config.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

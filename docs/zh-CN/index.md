@@ -4,6 +4,9 @@ hero:
   name: Dae Universe
   text: "Linux 软件包<br>与 dae 文档"
   tagline: "安装 Dae Universe 软件包，查阅 dae 的安装、配置、使用与开发文档。"
+  image:
+    src: /daeuniverse-hero.png
+    alt: Dae Universe
   actions:
     - theme: brand
       text: "快速开始"

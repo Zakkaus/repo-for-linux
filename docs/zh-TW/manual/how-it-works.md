@@ -2,10 +2,6 @@
 title: "運作原理"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 運作原理
@@ -13,7 +9,8 @@ title: "運作原理"
 
 dae 透過 [eBPF](https://en.wikipedia.org/wiki/EBPF) 將程式載入 Linux 核心中的 tc（traffic control）掛載點運作。此程式會在流量進入 TCP/IP 網路堆疊前執行流量分流。下圖顯示 tc 在 Linux 網路協定堆疊中的位置（圖中為接收路徑，傳送路徑方向相反），其中 netfilter 代表 iptables/nftables 的位置。
 
-![網路堆疊路徑](/upstream/netstack-path.webp)
+<img src="/upstream/netstack-path.webp" alt="網路堆疊路徑" class="upstream-diagram-light">
+<img src="/upstream/netstack-path-dark.png" alt="網路堆疊路徑" class="upstream-diagram-dark">
 
 ## 流量分流原理
 
@@ -72,3 +69,7 @@ dae 在更早的核心階段執行流量分流，並透過第 3 層路由轉送�
 從效能測試來看，與其他代理方案相比，dae 的直接連線效能相當出色。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

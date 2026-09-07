@@ -2,10 +2,6 @@
 title: "从源代码构建"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # 从源代码构建
@@ -74,3 +70,7 @@ curl -L -o example.dae https://github.com/daeuniverse/dae/raw/main/example.dae
 > **注意**：或者，你可以将 dae 作为守护进程（systemd）服务运行。请查看[守护进程服务指南](/zh-CN/manual/user-guide/run-as-daemon)了解详情。
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

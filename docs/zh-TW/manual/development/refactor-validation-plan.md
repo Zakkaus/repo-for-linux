@@ -2,10 +2,6 @@
 title: "重構驗證計畫"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/zh/development/refactor-validation-plan.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 重構驗證計畫
@@ -548,3 +544,7 @@ go test -race ./...
 - 一般完整測試與完整 race 測試均已通過。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/zh/development/refactor-validation-plan.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

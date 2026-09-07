@@ -2,10 +2,6 @@
 title: "Commit messages"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/development/commit-msg-guide.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # Commit messages
@@ -91,3 +87,7 @@ Closes #123, #245, #992
 - <https://wadehuanglearning.blogspot.com/2019/05/commit-commit-commit-why-what-commit.html>
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/development/commit-msg-guide.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

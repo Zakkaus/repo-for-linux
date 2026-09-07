@@ -2,10 +2,6 @@
 title: "工作原理"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # 工作原理
@@ -13,7 +9,8 @@ title: "工作原理"
 
 dae 通过 [eBPF](https://en.wikipedia.org/wiki/EBPF) 将程序加载到 Linux 内核的 tc（流量控制）挂载点运行。该程序会在流量进入 TCP/IP 网络栈前进行分流。下图展示 tc 在 Linux 网络协议栈中的位置（图示为接收路径，发送路径方向相反），其中 netfilter 表示 iptables/nftables 所在的位置。
 
-![网络栈路径](/upstream/netstack-path.webp)
+<img src="/upstream/netstack-path.webp" alt="网络栈路径" class="upstream-diagram-light">
+<img src="/upstream/netstack-path-dark.png" alt="网络栈路径" class="upstream-diagram-dark">
 
 ## 流量分流原理
 
@@ -72,3 +69,7 @@ dae 在更早的内核阶段进行流量分流，通过第 3 层路由转发直�
 从基准测试角度看，dae 的直连性能相对于其他代理方案表现强劲。
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

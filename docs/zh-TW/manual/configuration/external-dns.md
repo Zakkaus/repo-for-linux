@@ -2,10 +2,6 @@
 title: "外部 DNS"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/external-dns.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 外部 DNS
@@ -108,3 +104,7 @@ Others: https://dns.google/dns-query
 6. 若使用 PVE，請參閱 [#37](https://github.com/daeuniverse/dae/discussions/37)。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/external-dns.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

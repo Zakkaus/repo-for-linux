@@ -18,14 +18,14 @@
     "next": "下一页",
     "copy": "复制代码",
     "copied": "已复制",
-    "footer": "Dae Universe Linux 软件源 · 软件包许可证见参考文档。",
     "permalink": "标题链接：",
     "gentoo": "Gentoo / Calculate",
     "manual": "使用指南",
     "configuration": "配置",
     "development": "开发",
     "userGuide": "运行与维护",
-    "tutorials": "其他平台"
+    "tutorials": "其他平台",
+    "edit": "编辑此页"
   },
   "theme": {
     "langMenuLabel": "切换语言",
@@ -40,6 +40,13 @@
       "quote": "请检查地址，或返回首页选择文档。",
       "linkLabel": "返回首页",
       "linkText": "返回首页"
+    },
+    "lastUpdated": {
+      "text": "最后更新时间",
+      "formatOptions": {
+        "dateStyle": "medium",
+        "forceLocale": true
+      }
     }
   },
   "search": {

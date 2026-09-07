@@ -2,10 +2,6 @@
 title: "參與貢獻"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/development/contribute.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 參與貢獻
@@ -59,3 +55,7 @@ pre-commit install
 請勿透過在新留言中提及審查者來提醒他們。請改用再次請求審查功能。更多資訊請閱讀 [GitHub 文件：再次請求審查](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/incorporating-feedback-in-your-pull-request#re-requesting-a-review)。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/development/contribute.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

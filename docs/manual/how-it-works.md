@@ -2,10 +2,6 @@
 title: "How dae works"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # How dae works
@@ -13,7 +9,8 @@ Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e784
 
 dae operates by loading a program into the tc (traffic control) mount point in the Linux kernel using [eBPF](https://en.wikipedia.org/wiki/EBPF). This program performs traffic splitting before the traffic enters the TCP/IP network stack. The position of tc in the Linux network protocol stack is illustrated in the diagram below (the diagram illustrates the receiving path, while the sending path is in the opposite direction), where netfilter represents the location of iptables/nftables.
 
-![Network Stack Path](/upstream/netstack-path.webp)
+<img src="/upstream/netstack-path.webp" alt="Network Stack Path" class="upstream-diagram-light">
+<img src="/upstream/netstack-path-dark.png" alt="Network Stack Path" class="upstream-diagram-dark">
 
 ## Traffic Splitting Principle
 
@@ -72,3 +69,7 @@ Asymmetric routing brings an advantage and a potential issue:
 From a benchmark perspective, dae's direct connectivity performance is formidable compared to other proxy solutions.
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

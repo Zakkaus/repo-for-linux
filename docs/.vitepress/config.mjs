@@ -20,6 +20,7 @@ function localeConfig({ lang, label, prefix, description, labels: t, theme }) {
     link: `${prefix}/`,
     themeConfig: {
       ...theme,
+      editLink: { text: t.edit, pattern: process.env.DOCS_EDIT_URL || `${repositoryUrl}/edit/main/docs/:path` },
       nav: [
         { text: t.manual, link: `${prefix}/manual/` },
         { text: t.development, link: `${prefix}/manual/development/contribute` }
@@ -41,16 +42,16 @@ function localeConfig({ lang, label, prefix, description, labels: t, theme }) {
         ] }
       ],
       outline: { level: [2, 3], label: t.outline },
-      docFooter: { prev: t.previous, next: t.next },
-      footer: { message: `${t.footer}<br><a href="${repositoryUrl}">GitHub</a>` }
+      docFooter: { prev: t.previous, next: t.next }
     }
   }
 }
 
 export default defineConfig({
   title: 'Dae Universe',
+  lastUpdated: true,
   base,
-  head: [['link', { rel: 'icon', type: 'image/jpeg', href: `${base}daeuniverse.jpg` }]],
+  head: [['link', { rel: 'icon', type: 'image/png', href: `${base}daeuniverse-favicon.png` }]],
   cleanUrls: process.env.DOCS_CLEAN_URLS !== 'false',
   appearance: true,
   srcExclude: ['DESIGN.md'],
@@ -79,7 +80,8 @@ export default defineConfig({
   },
   themeConfig: {
     siteTitle: 'Dae Universe',
-    logo: { src: '/daeuniverse.jpg', alt: 'Dae Universe' },
+    footer: { message: `Dae Universe · <a href="${repositoryUrl}">GitHub</a>` },
+    logo: { src: '/daeuniverse.png', alt: 'Dae Universe' },
     search: {
       provider: 'local',
       options: {

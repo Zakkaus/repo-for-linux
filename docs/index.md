@@ -4,6 +4,9 @@ hero:
   name: Dae Universe
   text: "Linux packages.<br>dae documentation."
   tagline: "Install Dae Universe packages and read the dae installation, configuration and development guides."
+  image:
+    src: /daeuniverse-hero.png
+    alt: Dae Universe
   actions:
     - theme: brand
       text: "Quick start"

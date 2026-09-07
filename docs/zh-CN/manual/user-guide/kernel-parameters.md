@@ -2,10 +2,6 @@
 title: "内核参数"
 ---
 
-::: info
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/kernel-parameters.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-CN">
 
 # 内核参数
@@ -56,3 +52,7 @@ fi
 如果 `accept_ra` 为 1，请将其设置为 2，因为 `net.ipv6.conf.all.forwarding = 1` 会抑制它。更多信息请参阅 <https://sysctl-explorer.net/net/ipv6/accept_ra/>。
 
 </div>
+
+---
+
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/kernel-parameters.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

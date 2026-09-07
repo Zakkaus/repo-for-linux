@@ -2,10 +2,6 @@
 title: "從原始碼建置"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 從原始碼建置
@@ -74,3 +70,7 @@ curl -L -o example.dae https://github.com/daeuniverse/dae/raw/main/example.dae
 > **注意**：或者，你可以將 dae 作為常駐程式（systemd）服務執行。請查看[常駐程式服務指南](/zh-TW/manual/user-guide/run-as-daemon)瞭解詳情。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

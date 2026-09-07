@@ -2,10 +2,6 @@
 title: "Build from source"
 ---
 
-::: info
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
-:::
-
 <div v-pre lang="en-US">
 
 # Build from source
@@ -74,3 +70,7 @@ After fine tuning, run dae:
 > **Note**: Alternatively, you may run dae as a daemon (systemd) service. Check out more details [HERE](/manual/user-guide/run-as-daemon).
 
 </div>
+
+---
+
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

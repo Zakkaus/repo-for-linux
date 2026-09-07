@@ -2,10 +2,6 @@
 title: "疑難排解"
 ---
 
-::: info
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/troubleshooting.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
-:::
-
 <div v-pre lang="zh-TW">
 
 # 疑難排解
@@ -102,3 +98,7 @@ netstat -ulpen|grep 53
 2. 方法 2：編譯時加入 CFLAGS `-D__UNROLL_ROUTE_LOOP`。但這會在 eBPF 載入階段增加記憶體用量（或 swap 空間）（約 180MB）。例如，使用 `make CGO_ENABLED=0 GOARCH=arm64 CFLAGS="-D__UNROLL_ROUTE_LOOP"` 將 dae 編譯為 ARM64。
 
 </div>
+
+---
+
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/troubleshooting.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
