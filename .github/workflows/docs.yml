@@ -1,0 +1,99 @@
+name: Documentation
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+      - 'scripts/prepare-docs.mjs'
+      - 'tests/docs.test.mjs'
+      - 'README.md'
+      - 'package*.json'
+      - '.github/workflows/docs.yml'
+      - '.github/workflows/gen-repo.yml'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'scripts/prepare-docs.mjs'
+      - 'tests/docs.test.mjs'
+      - 'README.md'
+      - 'package*.json'
+      - '.github/workflows/docs.yml'
+      - '.github/workflows/gen-repo.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: documentation-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Check and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run docs:test
+      - run: npm run docs:build
+      - uses: actions/upload-artifact@v7
+        with:
+          name: documentation-preview
+          path: docs/.vitepress/dist
+          if-no-files-found: error
+
+  pages-build:
+    name: Build Pages preview
+    needs: build
+    if: >-
+      github.event_name != 'pull_request' &&
+      vars.DOCS_PAGES_PREVIEW == 'true' &&
+      github.ref_name == (vars.DOCS_PAGES_BRANCH || github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/configure-pages@v6
+        id: pages
+      - run: npm ci
+      - run: npm run docs:build
+        env:
+          DOCS_BASE: ${{ steps.pages.outputs.base_path }}/
+          DOCS_SITE_URL: ${{ steps.pages.outputs.base_url }}/
+          DOCS_CLEAN_URLS: 'false'
+          DOCS_EDIT_URL: ${{ github.server_url }}/${{ github.repository }}/edit/${{ github.ref_name }}/docs/:path
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs/.vitepress/dist
+
+  pages-deploy:
+    name: Deploy Pages preview
+    needs: pages-build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: documentation-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/deploy-pages@v5
+        id: deployment

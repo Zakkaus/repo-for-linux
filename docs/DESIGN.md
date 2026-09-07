@@ -78,7 +78,24 @@ navigation, language switching, local search and code copying. A production buil
 not verify these interactions.
 
 For a GitHub project Pages preview, set `DOCS_BASE` to the repository path (for example,
-`/repo-for-linux/`), `DOCS_CLEAN_URLS=false`, and `DOCS_SITE_URL` to the Pages origin.
+`/repo-for-linux/`), `DOCS_CLEAN_URLS=false`, and `DOCS_SITE_URL` to the full Pages URL,
+including the repository path and a trailing slash. Sitemap URLs resolve against this URL.
 The default build still targets the upstream root-domain site. Publish the preview output
 with `.nojekyll`; it contains documentation only, while installation commands keep using
 upstream package repository URLs.
+
+## Documentation CI
+
+`.github/workflows/docs.yml` checks relevant pushes and pull requests with `npm ci`,
+`npm run docs:test` and a production build, then uploads a downloadable preview artifact.
+The existing package-repository workflow also tests and builds the documentation before
+combining it with the package repository artifact.
+
+GitHub Pages deployment is opt-in: set the repository variable `DOCS_PAGES_PREVIEW=true`
+and select GitHub Actions as the Pages source. `DOCS_PAGES_BRANCH` selects the publishing
+branch; when omitted, the repository default branch is used. Allow that branch in the
+`github-pages` environment's deployment policy. The workflow obtains the actual Pages
+full site URL and base path from `actions/configure-pages` and builds with explicit `.html` URLs.
+Only successful checks on the selected branch can deploy; pull requests cannot deploy.
+The build jobs have read permissions, and only the deployment job receives Pages write
+and OIDC permissions. Repositories without the opt-in variable keep checks and artifacts.

@@ -89,8 +89,19 @@ jobs:
           bash -c "$(cat /tmp/create-repo-temp.sh)"
           cp public-key.asc repo/public-key.asc
           cat public-key.asc | gpg --dearmor -o repo/daeuniverse-archive-goose.gpg
-          npm i markdown-to-html-cli -g
-          markdown-to-html --output ./repo/ README.md
+
+      - name: Set up Node.js for documentation
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Build documentation
+        run: |
+          npm ci
+          npm run docs:test
+          npm run docs:build
+          cp -a docs/.vitepress/dist/. repo/
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v7
