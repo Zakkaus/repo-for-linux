@@ -36,7 +36,8 @@
     "serviceManagement": "Service management",
     "otherSoftware": "v2rayA & other software",
     "packageList": "Package list",
-    "experimental": "Experimental"
+    "experimental": "Experimental",
+    "dnsAndPrivateAddresses": "DNS and private addresses"
   },
   "theme": {
     "lastUpdated": {

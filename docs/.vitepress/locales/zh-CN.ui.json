@@ -36,7 +36,8 @@
     "serviceManagement": "服务管理",
     "otherSoftware": "v2rayA 与其他软件",
     "packageList": "软件列表",
-    "experimental": "实验性"
+    "experimental": "实验性",
+    "dnsAndPrivateAddresses": "DNS 与保留地址"
   },
   "theme": {
     "langMenuLabel": "切换语言",
