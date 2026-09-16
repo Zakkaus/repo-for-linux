@@ -63,6 +63,24 @@ routing {
 }
 ```
 
+If you do not care about extreme speed but care more about privacy and DNS
+leakage, replace the `dns` part above with:
+
+```shell
+dns {
+  upstream {
+    googledns: 'tcp+udp://dns.google:53'
+    alidns: 'udp://dns.alidns.com:53'
+  }
+  routing {
+    request {
+      qname(geosite:cn) -> alidns
+      fallback: googledns
+    }
+  }
+}
+```
+
 ::: details Minimal bootable configuration
 
 This minimal bootable configuration leaves dae in a no-load state.
@@ -83,4 +101,4 @@ If you use PVE, refer to [#37](https://github.com/daeuniverse/dae/discussions/37
 
 ---
 
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

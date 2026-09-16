@@ -17,7 +17,7 @@ golang >= 1.26.0
 make
 ```
 
-工具鏈需求取決於原始碼版本。本次收錄版本使用 Go 1.26.0，請核對對應的 [go.mod](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/go.mod) 與[建置工作流程](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/.github/workflows/seed-build.yml)。
+工具鏈需求取決於原始碼版本。本次收錄版本使用 Go 1.26.0，請核對對應的 [go.mod](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/go.mod) 與[建置工作流程](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/.github/workflows/seed-build.yml)。
 
 ### 編譯
 
@@ -54,6 +54,22 @@ make CGO_ENABLED=0 GOARCH=mips
 ```
 
 :::
+
+### 各架構的 trace 支援 {#trace-support-per-architecture}
+
+當工具鏈能產生選用的 `dae trace` eBPF 程式時，`make` 會建置它，並將結果記錄在 `.build_tags` 中：有建置時記錄 `trace`，未建置時則為空。**`arm`、`mips`、`mips64`、`mips64le`、`mipsle` 與 `s390x` 架構不提供 `dae trace`**（清單見 Makefile 中的 `TRACE_UNSUPPORTED_GOARCH`）。這些架構的建置會顯示 `WARNING`，繼續產生不含 `trace` 建置標籤的二進位檔。其他 `GOARCH` 若無法產生 trace 程式，則視為建置錯誤，因此二進位檔不會在沒有提示的情況下缺少 `dae trace`。
+
+此清單依據實測，而非假設；BPF Test 工作流程會透過 `./scripts/check-trace-arch-matrix.sh` 重新驗證。可用下列命令重現各架構的結果：
+
+```shell
+git submodule update --init
+GOARCH=mips BPF_CLANG=clang go generate ./trace/trace.go    # fails: no compiler specified
+GOARCH=mips64 BPF_CLANG=clang go generate ./trace/trace.go  # fails: unsupported target
+```
+
+不要僅因 `github.com/cilium/ebpf` 的 `gen.FindTarget()` 接受某架構，就將該架構從清單移除。目標查找與編譯是不同步驟；`mips` 能通過前者，卻無法通過後者，因為其 `bpf_tracing.h` 選用 mips 的 `pt_regs` 配置，而隨 `dae_bpf_headers` 子模組提供的 `vmlinux.h` 則退回使用 x86。
+
+`dae trace` 本身需要核心版本 >= 5.15；dae 的其他功能需要 >= 5.17。
 
 ## 執行
 
@@ -111,4 +127,4 @@ sudo ./dae run -c example.dae
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/user-guide/build-by-yourself.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

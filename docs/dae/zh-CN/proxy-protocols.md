@@ -15,7 +15,7 @@ title: "代理协议"
 | VMess / VLESS | **VMess**: AEAD, alterID=0<br>**传输**: TCP / WS / gRPC / Meek / HTTPUpgrade<br>**TLS**: Reality | [v2rayN](https://github.com/2dust/v2rayN/wiki/%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E(ver-2))<br>[DuckSoft](https://github.com/XTLS/Xray-core/discussions/716) |
 | Shadowsocks | **加密**: AEAD / Stream Ciphers<br>**插件**: simple-obfs / shadow-tls (SIP003)<br>[插件说明](#shadowsocks-plugins) | [SIP002](https://shadowsocks.org/doc/sip002.html)<br>[SIP008](https://shadowsocks.org/doc/sip008.html) |
 | ShadowsocksR | — | — |
-| Trojan | Trojan-gfw / Trojan-go | [trojan/trojan-go](https://p4gefau1t.github.io/trojan-go/developer/url/) |
+| Trojan | Trojan-gfw / Trojan-go | [trojan/trojan-go](https://p4gefau1t.github.io/trojan-go/developer/url) |
 | Tuic | **版本**: v5 | [Tuic](https://github.com/daeuniverse/dae/discussions/182) |
 | Juicity | — | [Juicity](https://github.com/juicity/juicity?tab=readme-ov-file#link-format) |
 | Hysteria2 | — | [Hysteria2](https://v2.hysteria.network/docs/developers/URI-Scheme) |
@@ -73,8 +73,32 @@ ShadowTLS v3 链接也可直接与 `shadowtls://` 一起使用。
 
    仅绑定 LAN 接口的用户无需执行此步骤。
 
+## 兼容性说明
+
+### VLESS 的 XTLS Vision 与格式错误的 ServerHello
+
+客户端只有从服务器的 `ServerHello` 中读取密码套件后，才能启用 XTLS Vision。因为 Vision 的填充策略取决于密码套件，所以猜测密码套件会破坏数据流。因此，出站层的 VLESS 实现仅在握手消息格式正确时解析密码套件；尤其要求 `legacy_session_id` 长度符合 RFC 8446 第 4.1.2 节规定的 0 至 32 字节范围，且消息长度足以包含该字段。
+
+如果 `ServerHello` 中的会话 ID 超过 32 字节，或握手消息被截断、过长，则不设置密码套件。**该连接不启用 XTLS Vision，会话退回普通 VLESS 转发**，既不应用 Vision 填充，也不报告协议错误。这是有意采用的安全回退方式，因为从格式错误的消息中推断密码套件会产生错误的填充，破坏数据流。
+
+此行为由 dae 依赖的出站库实现；dae 本身不解析握手消息。
+
+### 覆盖基于 QUIC 的协议的拥塞控制算法
+
+`tuic`、`juicity` 和 `hysteria2` 节点链接支持仅作用于客户端的 `cc_override` 查询参数，用于选择客户端使用的拥塞控制算法。该参数不会发送给服务器，并且优先于服务器报告的算法：
+
+```
+tuic://<uuid>:<password>@<server>:<port>?congestion_control=bbr&cc_override=bbr3
+juicity://<uuid>:<password>@<server>:<port>?congestion_control=bbr&cc_override=bbr3
+hysteria2://<auth>:<password>@<server>:443?upmbps=20&downmbps=100&cc_override=bbr3
+```
+
+`tuic` 和 `juicity` 支持 `bbr`、`cubic`、`new_reno`、`brutal` 和 `bbr3`；`hysteria2` 支持 `bbr`、`brutal` 和 `bbr3`。匹配前会将参数值转为小写，并去除首尾空白。如果参数值不受支持，节点会在构造拨号器时失败，而不是静默回退。
+
+未设置 `cc_override` 时，这三种协议均使用 `bbr3`；在链接中添加 `cc_override=bbr`，可为该节点恢复先前稳定版本的默认算法。
+
 </div>
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/proxy-protocols.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/proxy-protocols.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

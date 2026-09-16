@@ -22,6 +22,8 @@ uname -r
 | Bind to LAN | `5.17` | Act as an intermediate device providing network service for LAN traffic.<br>When bound only to LAN, dae handles only traffic from LAN and does not affect local programs. |
 | `dae trace` | `5.15` | Diagnose network connectivity issues. |
 
+If you want to use `dae trace` command to triage network connectivity issue, the kernel version is required to be >= 5.15. The `trace` build tag is not available for `arm`, `mips`, `mips64`, `mips64le`, `mipsle` and `s390x` builds (see [Build Guide](/dae/user-guide/build-by-yourself#trace-support-per-architecture)), so `dae trace` is missing there.
+
 ## 3. Check kernel configurations
 
 Usually, mainstream desktop distributions have these items turned on. But in order to reduce kernel size, some items are turned off by default on embedded device distributions like OpenWRT, Armbian, etc.
@@ -91,12 +93,12 @@ zcat /proc/config.gz || cat /boot/{config,config-$(uname -r)}
 ### Distribution-specific notes
 
 > **Note**: `Armbian` users can follow the [**Upgrade Guide**](/dae/user-guide/kernel-upgrade) to upgrade the kernel to meet the kernel configuration requirement.
-
-> `Arch Linux ARM` users can use [linux-aarch64-7ji](https://github.com/7Ji-PKGBUILDs/linux-aarch64-7ji) which meets the kernel configuration requirement of dae.
+>
+> `Arch Linux ARM` users can use [`linux-aarch64-7ji`](https://github.com/7Ji-PKGBUILDs/linux-aarch64-7ji) which meets the kernel configuration requirement of dae.
 <!-- quick-start-requirements:end -->
 
 </div>
 
 ---
 
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

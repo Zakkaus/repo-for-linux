@@ -31,6 +31,8 @@ dae 支援依網域名稱、來源 IP、目的地 IP、來源連接埠、目的�
 
 因此，若 DNS 請求無法通過 dae，基於網域的分流就不會成功。
 
+嗅探有時間限制。dae 會等待 `sniffing_timeout`（預設 30 毫秒），以從用戶端的第一個封包取得網域；若未取得，就改依 IP 分流。同一流量特徵（flow signature）連續三次嗅探失敗後，dae 會將其加入負向快取，十分鐘內不再嘗試嗅探。因此，起始封包從不攜帶網域的流量會停止比對網域，而非每次連線都重試。若某裝置設有網域白名單，卻使用自身的加密 DNS，dae 會在核心空間插入嗅探後備規則（`auto_sniff_punt`，請參閱[路由規則](/zh-TW/dae/configuration/routing)），讓白名單在該裝置的 DNS 未經 dae 時仍能生效。
+
 > 為減輕 DNS 污染並提升 CDN 連線速度，dae 在使用者空間採用網域嗅探。當 `dial_mode` 設為 "domain" 或其變體，且需要處理代理流量時，dae 會將嗅探到的網域傳送至代理伺服器，而非傳送 IP 位址。因此，代理伺服器會重新解析網域，並使用最佳 IP 連線。此方法可解決 DNS 污染並提升 CDN 連線速度。
 >
 > 此外，已使用其他分流方案且不想讓 DNS 請求通過 dae，但仍希望特定流量依網域分流的進階使用者（例如依目標網域分流 Netflix 節點與下載節點的流量，部分流量透過核心直接連線），可透過設定 `dial_mode: domain++` 強制使用嗅探到的網域進行分流。
@@ -72,4 +74,4 @@ dae 在更早的核心階段執行流量分流，並透過第 3 層路由轉送�
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/how-it-works.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

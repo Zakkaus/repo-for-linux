@@ -123,6 +123,18 @@ systemctl status dae
 
 :::
 
+## 内存与透明大页
+
+`GOMEMLIMIT` 根据进程的 cgroup 上限计算，而不是根据服务单元的设置计算。计算时仅使用 `memory.max`，得到的软限制为该上限的 90%；显式设置的 `GOMEMLIMIT` 环境变量始终优先。随附的服务单元已不再设置 `MemoryHigh`，因为运行时无法将其识别为内存上限。
+
+如果主机将透明大页设为 `always`，即使 Go 堆中的存活对象占用没有增加，内核也可能使 dae 的驻留内存增大。设置 `disable_thp: true` 可通过 `prctl(PR_SET_THP_DISABLE)` 为该进程禁用透明大页；默认值 `false` 不改变内核策略：
+
+```shell
+global {
+  disable_thp: true
+}
+```
+
 ## 检查系统日志
 
 ::: code-group
@@ -143,4 +155,4 @@ journalctl -xefu dae
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/run-as-daemon.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/user-guide/run-as-daemon.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

@@ -7,7 +7,8 @@ title: "Alpine Linux"
 # Alpine Linux
 
 The commands below use OpenRC. Select sudo if it is configured for your account, or root when already in a root shell.
-**Note:** 
+**Note:**
+
 1. Alpine Linux 3.18 or newer verison has full eBPF support out-of-box, older version of Alpine Linux need to build kernel by yourself.
 2. From version 3.20, Alpine Linux has officially disabled some features dae needed beacuse of Alpine Linux's cross CPU architectures compatibility, so only `linux-virt` can be used to run dae defaultly. For `linux-lts` or `linux-edge`, you should build the kernel by yourself.
 3. This tutorial is for Alpine Linux 3.20 and newer.
@@ -126,4 +127,4 @@ After completing [Minimal configuration](/dae/start/minimal-configuration), see 
 
 ---
 
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-alpine.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/tutorials/run-on-alpine.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

@@ -31,6 +31,10 @@ dae 支持按域名、源 IP、目的 IP、源端口、目的端口、TCP/UDP、
 
 因此，如果 DNS 请求无法经过 dae，基于域名的分流将无法成功。
 
+嗅探有时间限制。dae 会等待 `sniffing_timeout`（默认 30 毫秒），尝试从客户端的首个数据包中获取域名；若未获取到，则退回按 IP 分流。同一流签名连续三次嗅探失败后，dae 会在十分钟内停止嗅探该签名（负缓存）。这样，起始数据中始终不含域名的流就不会再进行域名匹配，也不会在每次连接时重试。
+
+当某台设备配置了域名白名单，却使用自己的加密 DNS 时，dae 会自动插入内核空间的嗅探回退规则（`auto_sniff_punt`，参见[路由规则](/zh-CN/dae/configuration/routing)）。即使该设备的 DNS 请求不经过 dae，白名单也能继续生效。
+
 > 为缓解 DNS 污染并提高 CDN 连接速度，dae 在用户空间使用域名嗅探。当 `dial_mode` 设置为 "domain" 或其变体且需要处理代理流量时，dae 会将嗅探到的域名而非 IP 地址发送给代理服务器。因此，代理服务器会重新解析域名，并使用最优 IP 连接。该方法解决 DNS 污染并提高 CDN 连接速度。
 >
 > 此外，已使用其他分流方案且不希望将 DNS 请求路由至 dae、但仍希望某些流量按域名分流的高级用户（例如按目标域名分流 Netflix 节点与下载节点的流量，部分流量通过核心直连），可通过设置 `dial_mode: domain++` 强制使用嗅探到的域名进行分流。
@@ -72,4 +76,4 @@ dae 在更早的内核阶段进行流量分流，通过第 3 层路由转发直�
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/how-it-works.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/how-it-works.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

@@ -1,6 +1,6 @@
 {
   "repository": "https://github.com/daeuniverse/dae",
-  "revision": "5db27a0028d36e7847bd3796497df952337a20e2",
+  "revision": "1ec85feddc721088ecdda73015bd78f652926b39",
   "license": "AGPL-3.0-only",
   "entries": [
     {
@@ -10,7 +10,7 @@
       "title": "Quick start",
       "source": "docs/en/README.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "211ad2d3923b694b108f7f3e536b24e186530dcdbbda52aef04ac5999b07c65d",
+      "sourceSha256": "894942967b463088e69dfce78d63ca67a5e4306d526c47f0912ec1e2816622bb",
       "fallback": false,
       "sourceCodeSha256": [
         "ef7119500f7264ee01b81c818bed3bfe2ecc0b60dff94fe08a17cabcd16d86e4",
@@ -27,14 +27,15 @@
         "dccf2b51a5c34362868c4368afa3fbfe308af7117532e220f2b37fe2a90cc028",
         "3cdcfd566c8e2b402d3f52d64135a1a3f77595221d75f33734743ce87e320602",
         "f8f7c40924ae70ceb90a5c2b902aa1b3c5a3205813edb638d14ee31b551205a9",
-        "e6edeccfd4e61492e5b4e83e479dad7eeb470ae5a7049e03e5c4976bf6655ca7"
+        "e6edeccfd4e61492e5b4e83e479dad7eeb470ae5a7049e03e5c4976bf6655ca7",
+        "4db8fae5aa614ac763dd5ee29095a6a37dfc3061820a80a9bd6c913f4f4f076d"
       ],
       "sourceHeadingCount": 30,
       "contentParts": [
         {
           "path": "dae/en-US/installation/arch.md",
           "marker": "installation-0",
-          "sha256": "0d254bd16cb9429037ae2ced7412c46380caee385aa45bfa19caae8adb39d8fc"
+          "sha256": "9ed860b4dbb708d8bf91bbe73a64933424ab76b16331cb0f42e83875244d5d1a"
         },
         {
           "path": "dae/en-US/installation/docker.md",
@@ -74,7 +75,7 @@
         {
           "path": "dae/en-US/start/requirements.md",
           "marker": "quick-start-requirements",
-          "sha256": "eee45207fc537f965b57b8e85cf752724b3a512641a40689405c011f02228ab4",
+          "sha256": "e647c06304eeca8d0b9f50a324790c779dce433019e1ce2aa09a3208b1b80b58",
           "additionalCodeSha256": [
             "d59c3c91aa8c19ff0fd08dacba6679638e32d426b66681fedfebc2ed864fa1a6"
           ],
@@ -92,12 +93,12 @@
         {
           "path": "dae/en-US/start/minimal-configuration.md",
           "marker": "quick-start-minimal-configuration",
-          "sha256": "3667571643c4e67948c5abeb120a4e19a7a9df2625be8d51c06730059e1fc176"
+          "sha256": "4aea3fda949bf7006c6e6d44284dd435f0d431d099b1c222ae62d8f994f69ccc"
         },
         {
           "path": "dae/en-US/start/pppoe.md",
           "marker": "quick-start-pppoe",
-          "sha256": "2894f53a8d62840175b244ddfbf2ccfee04fac198e70c4d421ad7079b16e3347"
+          "sha256": "0ae44baafd8bf9a933f38d40122ccb64e2474e65449a660270919e544cff7e88"
         },
         {
           "path": "dae/en-US/start/service-management.md",
@@ -152,7 +153,7 @@
       "title": "DNS",
       "source": "docs/en/configuration/dns.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "840abec898a7c81b4c0e3bbf6ff8debc021df0ffc4fad8f72772898545d96b46",
+      "sourceSha256": "a463bf9c19dbe1e73efd3473a44dc0e6e1b30db5c5624904856e5d5d3fcf4d26",
       "fallback": false,
       "sourceCodeSha256": [
         "4388f7c58486b9dd0dc5333354861141830d735c8ab675e4a531da8891bc7fc6",
@@ -162,11 +163,12 @@
         "82d0c430cdd0ebcfc81f4e25ea15bea59041a15e37398d23567cb7d41fcdc7d5",
         "2261d3645cef9e640f94b8020ac019f1f7577cdcd9d22f98f2b7c7ef1963c68c",
         "e13397201c7c4ff5f2f06e16dbeb6edfa18500f7f300aae591c2e2c675535af6",
-        "754edb04de2c71c81417bfd487d29bf994b062885075784d773f8943250424bb",
+        "ee401a815fa4273e809e57dd9abf555e78372a1b67700a8774751a6fdb1e155d",
+        "02b07d586ff7455903c96bb1ec1004d5c113d698a301e7f05bf4522beeabb225",
         "c0c2c1f62e2b1b1195f32766cf0edb5eaee68aa920c95a1d759fd393c2a57fde",
         "9a64c1827dc2f48f478ebadf72c36d07ea153deb42d759b8b6eac9ebf4feb635"
       ],
-      "sourceHeadingCount": 6,
+      "sourceHeadingCount": 7,
       "codeReplacements": [
         {
           "originalSha256": "c0c2c1f62e2b1b1195f32766cf0edb5eaee68aa920c95a1d759fd393c2a57fde",
@@ -191,14 +193,14 @@
       "title": "External DNS",
       "source": "docs/en/configuration/external-dns.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "7247c1a04818222082d34b1c499c8eb1da6a4167e0d9e82a78beb084bc792775",
+      "sourceSha256": "e68b8f0c0d54f96cb6452714ba2f11e36f821acd2bff28a4e4b87fffa3a195e5",
       "fallback": false,
       "sourceCodeSha256": [
         "9e08f79b14dc5f44d94526d71bca829abda9b33c5a9ee5f0b442ae6023092823",
         "ccd428605c73f96a5be3fc91e6d9bf9515ec8a7deabe930b7944cef7cdeed617",
         "4951b4b9bc5592115549dc04480074e4e53e69b053d0b5f492a21065295528a7",
         "c2c0979297740e43c33e8773840475db822b3f2e89eb652b70af238deaaa793c",
-        "d9df833edf0481cd9627d124180eb179dc3ba3dc4bcb77824321821d35b27cb1",
+        "10d825e06933c6b950f85f0498cc895adc08053679fddae87701390c1db7c81d",
         "4360a00b6641b40e5712830d4cbc58187f29780094b4a2b1bc1fa0696f9043f2"
       ],
       "sourceHeadingCount": 3,
@@ -214,7 +216,7 @@
       "title": "Gaming-oriented routing",
       "source": "docs/en/configuration/gaming-oriented-routing.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "8cd63d31a0258b5adb6bc3d10de5d596de5a0f60225747ac914068f701a8ad5d",
+      "sourceSha256": "34d6c7736eeb3284258ebaa6b28c8abf8db20fff044fbe55e574008d52b16cf0",
       "fallback": false,
       "sourceCodeSha256": [
         "9c22e26ad0ab6869433dd045c520742ceeba6f7e77ac1dff0e60d7f3cf2fd908",
@@ -230,15 +232,16 @@
       "title": "Routing",
       "source": "docs/en/configuration/routing.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "45eebf1fb5c0f65f258cca78e780368c285f76f97dfe9e7a21f2174f96095e00",
+      "sourceSha256": "c37a8f1b581c64e7e3d5f274e8e14b7cf307de6d7d01a111ac97fe7585c3502b",
       "fallback": false,
       "sourceCodeSha256": [
-        "ab3177f88c0b5cf368862ed2726e84a2b92a924a7cbd0b81fdc5da1aaaf3f6c5"
+        "9ea3b8a63a868e89c56b54ba803f94208ac52d1b4013079c0dd798241338b7a0",
+        "0e4446bbb2d99d583428d2a5c0efc725ea241eb6f553a18aea18ca20f2a11324"
       ],
-      "sourceHeadingCount": 41,
+      "sourceHeadingCount": 45,
       "codeReplacements": [
         {
-          "originalSha256": "ab3177f88c0b5cf368862ed2726e84a2b92a924a7cbd0b81fdc5da1aaaf3f6c5",
+          "originalSha256": "9ea3b8a63a868e89c56b54ba803f94208ac52d1b4013079c0dd798241338b7a0",
           "sha256": [
             "c2fb742030963aa00bdfa151eb6d001302636cb2e8769de1a3307e8a7edc4c03",
             "4503f3aa0d56a0fd2ba4afb1e9c71f8f3f4a4e124af1dff025aa948a55e93814",
@@ -258,7 +261,7 @@
             "38bbda32ef1357f32fda204eb58254747d47cf473ad8dfeff27d2d31e6ba077b",
             "dd56e6d303a446149930f51d0bb4930178acf3238d8f56b75bd909bc49b90dd0",
             "e8c82a4da10c1725e8fa0410e0e71c1657b508cee80977a12b0d05b77951cfc9",
-            "3b75b8de78e9e3ee3f5a3442fbd581fb290837dcdf79d6ae4f41d2443f30b3f9",
+            "b6b2b60d7f5531f71b386010ba35f6db4baaf68577708ff3bcad0bf5be32b641",
             "85c8411f4746f58436bc6ee18cbc1a555b3931ee24e6c251c178d24b21a074c2"
           ],
           "reason": "Split the existing reference at its source comment headings; preserve every rule and comment."
@@ -360,7 +363,7 @@
       "title": "Refactoring validation plan",
       "source": "docs/zh/development/refactor-validation-plan.md",
       "sourceLanguage": "zh-CN",
-      "sourceSha256": "4a0a171f4e853ecbf8c2f084dbe118d210f621272750495918ac1a27e1dc9881",
+      "sourceSha256": "7c7f5f818ffd7f6788d4712e65656914635a1f6478facb77afd008ea511db38e",
       "fallback": false,
       "sourceCodeSha256": [
         "bcf338a47e24fe7b1f023f153e596c3067c57c9b6b9215f16a8636ba35c0aad9",
@@ -392,7 +395,7 @@
       "title": "How dae works",
       "source": "docs/en/how-it-works.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "edcb4926c1c2893034e9ccfba2162caa29ca9237c6350770f1dab5a2378cb368",
+      "sourceSha256": "f0e4e60fbdfaf5715e983e8259df1f59888ed61fa3cb3faec50b758e7fcef226",
       "fallback": false,
       "sourceCodeSha256": [],
       "sourceHeadingCount": 5
@@ -404,15 +407,16 @@
       "title": "Proxy protocols",
       "source": "docs/en/proxy-protocols.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "ab30d949c06fc18ab580f52da3ce1b507da65c8d0e50f0cd3a548580bcbc93f2",
+      "sourceSha256": "1f24ed8382dd80fa316427c3ca48459b5882c2894cfe4d24624dd508f71e4a49",
       "fallback": false,
       "sourceCodeSha256": [
         "d1294d6478e2883a161db43b99f38b59034c63ed1e2fa38dea0901a15a86bc77",
         "7499b8d2fad636e07c8efccc17dba4cfdaeec0e99ce35f82a65261184aa19bfd",
         "ff0616e1382e29dc337ea3aa967f0e37fcbb13a958c5d1608a3c0a0a0d7f0c00",
-        "2d6c175c8ce05bd0925de4a58d73f22f9eaf3abcbb9c7f4d5d007a5c8ac893b2"
+        "2d6c175c8ce05bd0925de4a58d73f22f9eaf3abcbb9c7f4d5d007a5c8ac893b2",
+        "5d3afdc0a642f12574eedd679f5fe9ecf9ed9e91f84a53d489b97e9a5120dc42"
       ],
-      "sourceHeadingCount": 1
+      "sourceHeadingCount": 4
     },
     {
       "locale": "en-US",
@@ -454,7 +458,7 @@
       "title": "Alpine Linux",
       "source": "docs/en/tutorials/run-on-alpine.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "8005cf79a651350f4e5fe0933b6bfc505109ce3047f917a08dc5921ba65b7429",
+      "sourceSha256": "c42577eb29503c226e18692054d70d15428b704bc9badbf139e81b8788ea8c88",
       "fallback": false,
       "sourceCodeSha256": [
         "8db29ba75767cf7c110565d66ca76011969121b567184934fc77a7fb78fe7b62",
@@ -617,19 +621,20 @@
       "title": "Build from source",
       "source": "docs/en/user-guide/build-by-yourself.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "0cbb4b7b629f3089d55ddc1d20cb982a76aae1f46e76ddb354b4016ec0f28f89",
+      "sourceSha256": "65ed1f6bd2d97409c0be084264c7a7d037bf94d44a379c5eb61477876f83046b",
       "fallback": false,
       "sourceCodeSha256": [
-        "f72a39721e739523c4cb1de10f388301dc3cbe6fcc97cdfb9885a5728c10a9c9",
+        "f90cd44e2c6236eaeefef8cccfd73ab5cb32ab879bca1350a4e3dbb29d5dbffb",
         "8af544575d6dcc3848dc81c4b8b0bea84fcc0d1164694793ccf2901dd2d3df71",
+        "257b2595bd1604abcba942d1455108811f06b14ec23833dfdb295a1d69dfa78e",
         "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
         "e43402384acb7d2b3a526c13e42b5650b884fa1dde4b76e491fcb590462347b0",
         "7186e6049c60078384f9a4b8e68a17c17a8de64ef034f5c2aae41c4f0d73c3e6"
       ],
-      "sourceHeadingCount": 12,
+      "sourceHeadingCount": 13,
       "codeReplacements": [
         {
-          "originalSha256": "f72a39721e739523c4cb1de10f388301dc3cbe6fcc97cdfb9885a5728c10a9c9",
+          "originalSha256": "f90cd44e2c6236eaeefef8cccfd73ab5cb32ab879bca1350a4e3dbb29d5dbffb",
           "sha256": [
             "28f010162451ef630f670f996fec21e6209ae60f2c8c6bcb83b75b731f3f0fd1"
           ],
@@ -820,16 +825,17 @@
       "title": "Run as a service",
       "source": "docs/en/user-guide/run-as-daemon.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "2cf7e5d9dc8bdef01d46216d4802ec1f30a55f3a59ae095a436ba0378f645856",
+      "sourceSha256": "9b0881d20983a9b440937f967873b371357f998cbb24dedc6c01bcb85b4edfb5",
       "fallback": false,
       "sourceCodeSha256": [
         "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
         "ec7ec3acae5ce87ec8626ab7ae047857a7531411c6f37cd74a543dfbda4cc2dd",
         "0d8e2955da8c385684713e8b2cb371ffa130213c82209ef8719a4e8d22cdd12e",
         "0fbc5956fa88d714954b7dbc0551efa52297441ea1160c32dcb2735dbd468070",
+        "af4032c2ccd6989295e80280118da4f5771fc591a7027d2421e40ae237cab097",
         "e17ef86d685931a270f79c5b3fd6917a60368308ff673cc5fdaf055374034c68"
       ],
-      "sourceHeadingCount": 11,
+      "sourceHeadingCount": 12,
       "codeReplacements": [
         {
           "originalSha256": "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
@@ -884,7 +890,7 @@
       "title": "快速开始",
       "source": "docs/en/README.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "211ad2d3923b694b108f7f3e536b24e186530dcdbbda52aef04ac5999b07c65d",
+      "sourceSha256": "894942967b463088e69dfce78d63ca67a5e4306d526c47f0912ec1e2816622bb",
       "fallback": false,
       "sourceCodeSha256": [
         "ef7119500f7264ee01b81c818bed3bfe2ecc0b60dff94fe08a17cabcd16d86e4",
@@ -901,14 +907,15 @@
         "dccf2b51a5c34362868c4368afa3fbfe308af7117532e220f2b37fe2a90cc028",
         "3cdcfd566c8e2b402d3f52d64135a1a3f77595221d75f33734743ce87e320602",
         "f8f7c40924ae70ceb90a5c2b902aa1b3c5a3205813edb638d14ee31b551205a9",
-        "e6edeccfd4e61492e5b4e83e479dad7eeb470ae5a7049e03e5c4976bf6655ca7"
+        "e6edeccfd4e61492e5b4e83e479dad7eeb470ae5a7049e03e5c4976bf6655ca7",
+        "4db8fae5aa614ac763dd5ee29095a6a37dfc3061820a80a9bd6c913f4f4f076d"
       ],
       "sourceHeadingCount": 30,
       "contentParts": [
         {
           "path": "dae/zh-CN/installation/arch.md",
           "marker": "installation-0",
-          "sha256": "e15966b2bf78bcff037fa3abe04a1f25a9aa5c38e8c560da8ca2f19a070eed76"
+          "sha256": "e174dfe2323cb0a3a443aabbf5480cbcc3f694746b4be10cf589862aab2a7ef4"
         },
         {
           "path": "dae/zh-CN/installation/docker.md",
@@ -948,7 +955,7 @@
         {
           "path": "dae/zh-CN/start/requirements.md",
           "marker": "quick-start-requirements",
-          "sha256": "8e391e599f586205795ce6dce7d2e858f491680a4c66381a3afbb064e21830a1",
+          "sha256": "e56b123913c4d823ca5f63e2509974a73892db8b6c1f5dbc30b6474604ba6339",
           "additionalCodeSha256": [
             "d59c3c91aa8c19ff0fd08dacba6679638e32d426b66681fedfebc2ed864fa1a6"
           ],
@@ -966,12 +973,12 @@
         {
           "path": "dae/zh-CN/start/minimal-configuration.md",
           "marker": "quick-start-minimal-configuration",
-          "sha256": "3b8407142069d6a05404f95b394abf51edbffe19490f10d63fa9be69cd243616"
+          "sha256": "903d913167813a06632039db7c289a0d81959b469a99224c25a71d5f63ec6553"
         },
         {
           "path": "dae/zh-CN/start/pppoe.md",
           "marker": "quick-start-pppoe",
-          "sha256": "56d1028b3fb939f72f6aeb0446fa901a57fbba745dad2dfdbcb47ba728155300"
+          "sha256": "0d544bf7af015c91bc8f56a52dd8a5c40203db579b90d1f2c7e1e407531e73f3"
         },
         {
           "path": "dae/zh-CN/start/service-management.md",
@@ -1026,7 +1033,7 @@
       "title": "DNS",
       "source": "docs/en/configuration/dns.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "840abec898a7c81b4c0e3bbf6ff8debc021df0ffc4fad8f72772898545d96b46",
+      "sourceSha256": "a463bf9c19dbe1e73efd3473a44dc0e6e1b30db5c5624904856e5d5d3fcf4d26",
       "fallback": false,
       "sourceCodeSha256": [
         "4388f7c58486b9dd0dc5333354861141830d735c8ab675e4a531da8891bc7fc6",
@@ -1036,11 +1043,12 @@
         "82d0c430cdd0ebcfc81f4e25ea15bea59041a15e37398d23567cb7d41fcdc7d5",
         "2261d3645cef9e640f94b8020ac019f1f7577cdcd9d22f98f2b7c7ef1963c68c",
         "e13397201c7c4ff5f2f06e16dbeb6edfa18500f7f300aae591c2e2c675535af6",
-        "754edb04de2c71c81417bfd487d29bf994b062885075784d773f8943250424bb",
+        "ee401a815fa4273e809e57dd9abf555e78372a1b67700a8774751a6fdb1e155d",
+        "02b07d586ff7455903c96bb1ec1004d5c113d698a301e7f05bf4522beeabb225",
         "c0c2c1f62e2b1b1195f32766cf0edb5eaee68aa920c95a1d759fd393c2a57fde",
         "9a64c1827dc2f48f478ebadf72c36d07ea153deb42d759b8b6eac9ebf4feb635"
       ],
-      "sourceHeadingCount": 6,
+      "sourceHeadingCount": 7,
       "codeReplacements": [
         {
           "originalSha256": "c0c2c1f62e2b1b1195f32766cf0edb5eaee68aa920c95a1d759fd393c2a57fde",
@@ -1065,14 +1073,14 @@
       "title": "外部 DNS",
       "source": "docs/en/configuration/external-dns.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "7247c1a04818222082d34b1c499c8eb1da6a4167e0d9e82a78beb084bc792775",
+      "sourceSha256": "e68b8f0c0d54f96cb6452714ba2f11e36f821acd2bff28a4e4b87fffa3a195e5",
       "fallback": false,
       "sourceCodeSha256": [
         "9e08f79b14dc5f44d94526d71bca829abda9b33c5a9ee5f0b442ae6023092823",
         "ccd428605c73f96a5be3fc91e6d9bf9515ec8a7deabe930b7944cef7cdeed617",
         "4951b4b9bc5592115549dc04480074e4e53e69b053d0b5f492a21065295528a7",
         "c2c0979297740e43c33e8773840475db822b3f2e89eb652b70af238deaaa793c",
-        "d9df833edf0481cd9627d124180eb179dc3ba3dc4bcb77824321821d35b27cb1",
+        "10d825e06933c6b950f85f0498cc895adc08053679fddae87701390c1db7c81d",
         "4360a00b6641b40e5712830d4cbc58187f29780094b4a2b1bc1fa0696f9043f2"
       ],
       "sourceHeadingCount": 3,
@@ -1088,7 +1096,7 @@
       "title": "游戏路由",
       "source": "docs/en/configuration/gaming-oriented-routing.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "8cd63d31a0258b5adb6bc3d10de5d596de5a0f60225747ac914068f701a8ad5d",
+      "sourceSha256": "34d6c7736eeb3284258ebaa6b28c8abf8db20fff044fbe55e574008d52b16cf0",
       "fallback": false,
       "sourceCodeSha256": [
         "9c22e26ad0ab6869433dd045c520742ceeba6f7e77ac1dff0e60d7f3cf2fd908",
@@ -1104,15 +1112,16 @@
       "title": "路由规则",
       "source": "docs/en/configuration/routing.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "45eebf1fb5c0f65f258cca78e780368c285f76f97dfe9e7a21f2174f96095e00",
+      "sourceSha256": "c37a8f1b581c64e7e3d5f274e8e14b7cf307de6d7d01a111ac97fe7585c3502b",
       "fallback": false,
       "sourceCodeSha256": [
-        "ab3177f88c0b5cf368862ed2726e84a2b92a924a7cbd0b81fdc5da1aaaf3f6c5"
+        "9ea3b8a63a868e89c56b54ba803f94208ac52d1b4013079c0dd798241338b7a0",
+        "0e4446bbb2d99d583428d2a5c0efc725ea241eb6f553a18aea18ca20f2a11324"
       ],
-      "sourceHeadingCount": 41,
+      "sourceHeadingCount": 45,
       "codeReplacements": [
         {
-          "originalSha256": "ab3177f88c0b5cf368862ed2726e84a2b92a924a7cbd0b81fdc5da1aaaf3f6c5",
+          "originalSha256": "9ea3b8a63a868e89c56b54ba803f94208ac52d1b4013079c0dd798241338b7a0",
           "sha256": [
             "c2fb742030963aa00bdfa151eb6d001302636cb2e8769de1a3307e8a7edc4c03",
             "4503f3aa0d56a0fd2ba4afb1e9c71f8f3f4a4e124af1dff025aa948a55e93814",
@@ -1132,7 +1141,7 @@
             "38bbda32ef1357f32fda204eb58254747d47cf473ad8dfeff27d2d31e6ba077b",
             "dd56e6d303a446149930f51d0bb4930178acf3238d8f56b75bd909bc49b90dd0",
             "e8c82a4da10c1725e8fa0410e0e71c1657b508cee80977a12b0d05b77951cfc9",
-            "3b75b8de78e9e3ee3f5a3442fbd581fb290837dcdf79d6ae4f41d2443f30b3f9",
+            "b6b2b60d7f5531f71b386010ba35f6db4baaf68577708ff3bcad0bf5be32b641",
             "85c8411f4746f58436bc6ee18cbc1a555b3931ee24e6c251c178d24b21a074c2"
           ],
           "reason": "Split the existing reference at its source comment headings; preserve every rule and comment."
@@ -1234,7 +1243,7 @@
       "title": "重构验证计划",
       "source": "docs/zh/development/refactor-validation-plan.md",
       "sourceLanguage": "zh-CN",
-      "sourceSha256": "4a0a171f4e853ecbf8c2f084dbe118d210f621272750495918ac1a27e1dc9881",
+      "sourceSha256": "7c7f5f818ffd7f6788d4712e65656914635a1f6478facb77afd008ea511db38e",
       "fallback": false,
       "sourceCodeSha256": [
         "bcf338a47e24fe7b1f023f153e596c3067c57c9b6b9215f16a8636ba35c0aad9",
@@ -1266,7 +1275,7 @@
       "title": "工作原理",
       "source": "docs/en/how-it-works.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "edcb4926c1c2893034e9ccfba2162caa29ca9237c6350770f1dab5a2378cb368",
+      "sourceSha256": "f0e4e60fbdfaf5715e983e8259df1f59888ed61fa3cb3faec50b758e7fcef226",
       "fallback": false,
       "sourceCodeSha256": [],
       "sourceHeadingCount": 5
@@ -1278,15 +1287,16 @@
       "title": "代理协议",
       "source": "docs/en/proxy-protocols.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "ab30d949c06fc18ab580f52da3ce1b507da65c8d0e50f0cd3a548580bcbc93f2",
+      "sourceSha256": "1f24ed8382dd80fa316427c3ca48459b5882c2894cfe4d24624dd508f71e4a49",
       "fallback": false,
       "sourceCodeSha256": [
         "d1294d6478e2883a161db43b99f38b59034c63ed1e2fa38dea0901a15a86bc77",
         "7499b8d2fad636e07c8efccc17dba4cfdaeec0e99ce35f82a65261184aa19bfd",
         "ff0616e1382e29dc337ea3aa967f0e37fcbb13a958c5d1608a3c0a0a0d7f0c00",
-        "2d6c175c8ce05bd0925de4a58d73f22f9eaf3abcbb9c7f4d5d007a5c8ac893b2"
+        "2d6c175c8ce05bd0925de4a58d73f22f9eaf3abcbb9c7f4d5d007a5c8ac893b2",
+        "5d3afdc0a642f12574eedd679f5fe9ecf9ed9e91f84a53d489b97e9a5120dc42"
       ],
-      "sourceHeadingCount": 1
+      "sourceHeadingCount": 4
     },
     {
       "locale": "zh-CN",
@@ -1328,7 +1338,7 @@
       "title": "Alpine Linux",
       "source": "docs/en/tutorials/run-on-alpine.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "8005cf79a651350f4e5fe0933b6bfc505109ce3047f917a08dc5921ba65b7429",
+      "sourceSha256": "c42577eb29503c226e18692054d70d15428b704bc9badbf139e81b8788ea8c88",
       "fallback": false,
       "sourceCodeSha256": [
         "8db29ba75767cf7c110565d66ca76011969121b567184934fc77a7fb78fe7b62",
@@ -1491,19 +1501,20 @@
       "title": "从源代码构建",
       "source": "docs/en/user-guide/build-by-yourself.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "0cbb4b7b629f3089d55ddc1d20cb982a76aae1f46e76ddb354b4016ec0f28f89",
+      "sourceSha256": "65ed1f6bd2d97409c0be084264c7a7d037bf94d44a379c5eb61477876f83046b",
       "fallback": false,
       "sourceCodeSha256": [
-        "f72a39721e739523c4cb1de10f388301dc3cbe6fcc97cdfb9885a5728c10a9c9",
+        "f90cd44e2c6236eaeefef8cccfd73ab5cb32ab879bca1350a4e3dbb29d5dbffb",
         "8af544575d6dcc3848dc81c4b8b0bea84fcc0d1164694793ccf2901dd2d3df71",
+        "257b2595bd1604abcba942d1455108811f06b14ec23833dfdb295a1d69dfa78e",
         "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
         "e43402384acb7d2b3a526c13e42b5650b884fa1dde4b76e491fcb590462347b0",
         "7186e6049c60078384f9a4b8e68a17c17a8de64ef034f5c2aae41c4f0d73c3e6"
       ],
-      "sourceHeadingCount": 12,
+      "sourceHeadingCount": 13,
       "codeReplacements": [
         {
-          "originalSha256": "f72a39721e739523c4cb1de10f388301dc3cbe6fcc97cdfb9885a5728c10a9c9",
+          "originalSha256": "f90cd44e2c6236eaeefef8cccfd73ab5cb32ab879bca1350a4e3dbb29d5dbffb",
           "sha256": [
             "28f010162451ef630f670f996fec21e6209ae60f2c8c6bcb83b75b731f3f0fd1"
           ],
@@ -1694,16 +1705,17 @@
       "title": "作为服务运行",
       "source": "docs/en/user-guide/run-as-daemon.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "2cf7e5d9dc8bdef01d46216d4802ec1f30a55f3a59ae095a436ba0378f645856",
+      "sourceSha256": "9b0881d20983a9b440937f967873b371357f998cbb24dedc6c01bcb85b4edfb5",
       "fallback": false,
       "sourceCodeSha256": [
         "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
         "ec7ec3acae5ce87ec8626ab7ae047857a7531411c6f37cd74a543dfbda4cc2dd",
         "0d8e2955da8c385684713e8b2cb371ffa130213c82209ef8719a4e8d22cdd12e",
         "0fbc5956fa88d714954b7dbc0551efa52297441ea1160c32dcb2735dbd468070",
+        "af4032c2ccd6989295e80280118da4f5771fc591a7027d2421e40ae237cab097",
         "e17ef86d685931a270f79c5b3fd6917a60368308ff673cc5fdaf055374034c68"
       ],
-      "sourceHeadingCount": 11,
+      "sourceHeadingCount": 12,
       "codeReplacements": [
         {
           "originalSha256": "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
@@ -1758,7 +1770,7 @@
       "title": "快速開始",
       "source": "docs/en/README.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "211ad2d3923b694b108f7f3e536b24e186530dcdbbda52aef04ac5999b07c65d",
+      "sourceSha256": "894942967b463088e69dfce78d63ca67a5e4306d526c47f0912ec1e2816622bb",
       "fallback": false,
       "sourceCodeSha256": [
         "ef7119500f7264ee01b81c818bed3bfe2ecc0b60dff94fe08a17cabcd16d86e4",
@@ -1775,14 +1787,15 @@
         "dccf2b51a5c34362868c4368afa3fbfe308af7117532e220f2b37fe2a90cc028",
         "3cdcfd566c8e2b402d3f52d64135a1a3f77595221d75f33734743ce87e320602",
         "f8f7c40924ae70ceb90a5c2b902aa1b3c5a3205813edb638d14ee31b551205a9",
-        "e6edeccfd4e61492e5b4e83e479dad7eeb470ae5a7049e03e5c4976bf6655ca7"
+        "e6edeccfd4e61492e5b4e83e479dad7eeb470ae5a7049e03e5c4976bf6655ca7",
+        "4db8fae5aa614ac763dd5ee29095a6a37dfc3061820a80a9bd6c913f4f4f076d"
       ],
       "sourceHeadingCount": 30,
       "contentParts": [
         {
           "path": "dae/zh-TW/installation/arch.md",
           "marker": "installation-0",
-          "sha256": "57233129728a6b593367af74de9753cce688939c74e3bb616fb3b623243743c7"
+          "sha256": "3203f8ac1d05dcbf2fc976059f01c65b40854270a5a9d493750d5e74e338350a"
         },
         {
           "path": "dae/zh-TW/installation/docker.md",
@@ -1822,7 +1835,7 @@
         {
           "path": "dae/zh-TW/start/requirements.md",
           "marker": "quick-start-requirements",
-          "sha256": "effdac8c7b5aff6eccb492406e00976b6f80c1aa6f87fda2ee79fa906b2326b0",
+          "sha256": "6af030ee6e51ff9704fffa320e37e84c4875a36ab18f4adca75d3b33eda24f25",
           "additionalCodeSha256": [
             "d59c3c91aa8c19ff0fd08dacba6679638e32d426b66681fedfebc2ed864fa1a6"
           ],
@@ -1840,12 +1853,12 @@
         {
           "path": "dae/zh-TW/start/minimal-configuration.md",
           "marker": "quick-start-minimal-configuration",
-          "sha256": "7011608e180adbe888b1c55dbba8f06d339f77bf1c4d2ddc5305b7f468abde6b"
+          "sha256": "ebad792e758dc2c67a6be8763358b4298d06cf6845c7966c930c6bd83777a512"
         },
         {
           "path": "dae/zh-TW/start/pppoe.md",
           "marker": "quick-start-pppoe",
-          "sha256": "f6e6a0fc9b5439dd8ba4a598cdc42a9a836d3e6c1c2808bff16ec81850d357d2"
+          "sha256": "dfbf91a6bf866e53ee55fa67a7f7287674abe4ecd08bc0a0ed158d1d32f613ed"
         },
         {
           "path": "dae/zh-TW/start/service-management.md",
@@ -1900,7 +1913,7 @@
       "title": "DNS",
       "source": "docs/en/configuration/dns.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "840abec898a7c81b4c0e3bbf6ff8debc021df0ffc4fad8f72772898545d96b46",
+      "sourceSha256": "a463bf9c19dbe1e73efd3473a44dc0e6e1b30db5c5624904856e5d5d3fcf4d26",
       "fallback": false,
       "sourceCodeSha256": [
         "4388f7c58486b9dd0dc5333354861141830d735c8ab675e4a531da8891bc7fc6",
@@ -1910,11 +1923,12 @@
         "82d0c430cdd0ebcfc81f4e25ea15bea59041a15e37398d23567cb7d41fcdc7d5",
         "2261d3645cef9e640f94b8020ac019f1f7577cdcd9d22f98f2b7c7ef1963c68c",
         "e13397201c7c4ff5f2f06e16dbeb6edfa18500f7f300aae591c2e2c675535af6",
-        "754edb04de2c71c81417bfd487d29bf994b062885075784d773f8943250424bb",
+        "ee401a815fa4273e809e57dd9abf555e78372a1b67700a8774751a6fdb1e155d",
+        "02b07d586ff7455903c96bb1ec1004d5c113d698a301e7f05bf4522beeabb225",
         "c0c2c1f62e2b1b1195f32766cf0edb5eaee68aa920c95a1d759fd393c2a57fde",
         "9a64c1827dc2f48f478ebadf72c36d07ea153deb42d759b8b6eac9ebf4feb635"
       ],
-      "sourceHeadingCount": 6,
+      "sourceHeadingCount": 7,
       "codeReplacements": [
         {
           "originalSha256": "c0c2c1f62e2b1b1195f32766cf0edb5eaee68aa920c95a1d759fd393c2a57fde",
@@ -1939,14 +1953,14 @@
       "title": "外部 DNS",
       "source": "docs/en/configuration/external-dns.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "7247c1a04818222082d34b1c499c8eb1da6a4167e0d9e82a78beb084bc792775",
+      "sourceSha256": "e68b8f0c0d54f96cb6452714ba2f11e36f821acd2bff28a4e4b87fffa3a195e5",
       "fallback": false,
       "sourceCodeSha256": [
         "9e08f79b14dc5f44d94526d71bca829abda9b33c5a9ee5f0b442ae6023092823",
         "ccd428605c73f96a5be3fc91e6d9bf9515ec8a7deabe930b7944cef7cdeed617",
         "4951b4b9bc5592115549dc04480074e4e53e69b053d0b5f492a21065295528a7",
         "c2c0979297740e43c33e8773840475db822b3f2e89eb652b70af238deaaa793c",
-        "d9df833edf0481cd9627d124180eb179dc3ba3dc4bcb77824321821d35b27cb1",
+        "10d825e06933c6b950f85f0498cc895adc08053679fddae87701390c1db7c81d",
         "4360a00b6641b40e5712830d4cbc58187f29780094b4a2b1bc1fa0696f9043f2"
       ],
       "sourceHeadingCount": 3,
@@ -1962,7 +1976,7 @@
       "title": "遊戲路由",
       "source": "docs/en/configuration/gaming-oriented-routing.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "8cd63d31a0258b5adb6bc3d10de5d596de5a0f60225747ac914068f701a8ad5d",
+      "sourceSha256": "34d6c7736eeb3284258ebaa6b28c8abf8db20fff044fbe55e574008d52b16cf0",
       "fallback": false,
       "sourceCodeSha256": [
         "9c22e26ad0ab6869433dd045c520742ceeba6f7e77ac1dff0e60d7f3cf2fd908",
@@ -1978,15 +1992,16 @@
       "title": "路由規則",
       "source": "docs/en/configuration/routing.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "45eebf1fb5c0f65f258cca78e780368c285f76f97dfe9e7a21f2174f96095e00",
+      "sourceSha256": "c37a8f1b581c64e7e3d5f274e8e14b7cf307de6d7d01a111ac97fe7585c3502b",
       "fallback": false,
       "sourceCodeSha256": [
-        "ab3177f88c0b5cf368862ed2726e84a2b92a924a7cbd0b81fdc5da1aaaf3f6c5"
+        "9ea3b8a63a868e89c56b54ba803f94208ac52d1b4013079c0dd798241338b7a0",
+        "0e4446bbb2d99d583428d2a5c0efc725ea241eb6f553a18aea18ca20f2a11324"
       ],
-      "sourceHeadingCount": 41,
+      "sourceHeadingCount": 45,
       "codeReplacements": [
         {
-          "originalSha256": "ab3177f88c0b5cf368862ed2726e84a2b92a924a7cbd0b81fdc5da1aaaf3f6c5",
+          "originalSha256": "9ea3b8a63a868e89c56b54ba803f94208ac52d1b4013079c0dd798241338b7a0",
           "sha256": [
             "c2fb742030963aa00bdfa151eb6d001302636cb2e8769de1a3307e8a7edc4c03",
             "4503f3aa0d56a0fd2ba4afb1e9c71f8f3f4a4e124af1dff025aa948a55e93814",
@@ -2006,7 +2021,7 @@
             "38bbda32ef1357f32fda204eb58254747d47cf473ad8dfeff27d2d31e6ba077b",
             "dd56e6d303a446149930f51d0bb4930178acf3238d8f56b75bd909bc49b90dd0",
             "e8c82a4da10c1725e8fa0410e0e71c1657b508cee80977a12b0d05b77951cfc9",
-            "3b75b8de78e9e3ee3f5a3442fbd581fb290837dcdf79d6ae4f41d2443f30b3f9",
+            "b6b2b60d7f5531f71b386010ba35f6db4baaf68577708ff3bcad0bf5be32b641",
             "85c8411f4746f58436bc6ee18cbc1a555b3931ee24e6c251c178d24b21a074c2"
           ],
           "reason": "Split the existing reference at its source comment headings; preserve every rule and comment."
@@ -2108,7 +2123,7 @@
       "title": "重構驗證計畫",
       "source": "docs/zh/development/refactor-validation-plan.md",
       "sourceLanguage": "zh-CN",
-      "sourceSha256": "4a0a171f4e853ecbf8c2f084dbe118d210f621272750495918ac1a27e1dc9881",
+      "sourceSha256": "7c7f5f818ffd7f6788d4712e65656914635a1f6478facb77afd008ea511db38e",
       "fallback": false,
       "sourceCodeSha256": [
         "bcf338a47e24fe7b1f023f153e596c3067c57c9b6b9215f16a8636ba35c0aad9",
@@ -2140,7 +2155,7 @@
       "title": "運作原理",
       "source": "docs/en/how-it-works.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "edcb4926c1c2893034e9ccfba2162caa29ca9237c6350770f1dab5a2378cb368",
+      "sourceSha256": "f0e4e60fbdfaf5715e983e8259df1f59888ed61fa3cb3faec50b758e7fcef226",
       "fallback": false,
       "sourceCodeSha256": [],
       "sourceHeadingCount": 5
@@ -2152,15 +2167,16 @@
       "title": "代理協定",
       "source": "docs/en/proxy-protocols.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "ab30d949c06fc18ab580f52da3ce1b507da65c8d0e50f0cd3a548580bcbc93f2",
+      "sourceSha256": "1f24ed8382dd80fa316427c3ca48459b5882c2894cfe4d24624dd508f71e4a49",
       "fallback": false,
       "sourceCodeSha256": [
         "d1294d6478e2883a161db43b99f38b59034c63ed1e2fa38dea0901a15a86bc77",
         "7499b8d2fad636e07c8efccc17dba4cfdaeec0e99ce35f82a65261184aa19bfd",
         "ff0616e1382e29dc337ea3aa967f0e37fcbb13a958c5d1608a3c0a0a0d7f0c00",
-        "2d6c175c8ce05bd0925de4a58d73f22f9eaf3abcbb9c7f4d5d007a5c8ac893b2"
+        "2d6c175c8ce05bd0925de4a58d73f22f9eaf3abcbb9c7f4d5d007a5c8ac893b2",
+        "5d3afdc0a642f12574eedd679f5fe9ecf9ed9e91f84a53d489b97e9a5120dc42"
       ],
-      "sourceHeadingCount": 1
+      "sourceHeadingCount": 4
     },
     {
       "locale": "zh-TW",
@@ -2202,7 +2218,7 @@
       "title": "Alpine Linux",
       "source": "docs/en/tutorials/run-on-alpine.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "8005cf79a651350f4e5fe0933b6bfc505109ce3047f917a08dc5921ba65b7429",
+      "sourceSha256": "c42577eb29503c226e18692054d70d15428b704bc9badbf139e81b8788ea8c88",
       "fallback": false,
       "sourceCodeSha256": [
         "8db29ba75767cf7c110565d66ca76011969121b567184934fc77a7fb78fe7b62",
@@ -2365,19 +2381,20 @@
       "title": "從原始碼建置",
       "source": "docs/en/user-guide/build-by-yourself.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "0cbb4b7b629f3089d55ddc1d20cb982a76aae1f46e76ddb354b4016ec0f28f89",
+      "sourceSha256": "65ed1f6bd2d97409c0be084264c7a7d037bf94d44a379c5eb61477876f83046b",
       "fallback": false,
       "sourceCodeSha256": [
-        "f72a39721e739523c4cb1de10f388301dc3cbe6fcc97cdfb9885a5728c10a9c9",
+        "f90cd44e2c6236eaeefef8cccfd73ab5cb32ab879bca1350a4e3dbb29d5dbffb",
         "8af544575d6dcc3848dc81c4b8b0bea84fcc0d1164694793ccf2901dd2d3df71",
+        "257b2595bd1604abcba942d1455108811f06b14ec23833dfdb295a1d69dfa78e",
         "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
         "e43402384acb7d2b3a526c13e42b5650b884fa1dde4b76e491fcb590462347b0",
         "7186e6049c60078384f9a4b8e68a17c17a8de64ef034f5c2aae41c4f0d73c3e6"
       ],
-      "sourceHeadingCount": 12,
+      "sourceHeadingCount": 13,
       "codeReplacements": [
         {
-          "originalSha256": "f72a39721e739523c4cb1de10f388301dc3cbe6fcc97cdfb9885a5728c10a9c9",
+          "originalSha256": "f90cd44e2c6236eaeefef8cccfd73ab5cb32ab879bca1350a4e3dbb29d5dbffb",
           "sha256": [
             "28f010162451ef630f670f996fec21e6209ae60f2c8c6bcb83b75b731f3f0fd1"
           ],
@@ -2568,16 +2585,17 @@
       "title": "以服務執行",
       "source": "docs/en/user-guide/run-as-daemon.md",
       "sourceLanguage": "en-US",
-      "sourceSha256": "2cf7e5d9dc8bdef01d46216d4802ec1f30a55f3a59ae095a436ba0378f645856",
+      "sourceSha256": "9b0881d20983a9b440937f967873b371357f998cbb24dedc6c01bcb85b4edfb5",
       "fallback": false,
       "sourceCodeSha256": [
         "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",
         "ec7ec3acae5ce87ec8626ab7ae047857a7531411c6f37cd74a543dfbda4cc2dd",
         "0d8e2955da8c385684713e8b2cb371ffa130213c82209ef8719a4e8d22cdd12e",
         "0fbc5956fa88d714954b7dbc0551efa52297441ea1160c32dcb2735dbd468070",
+        "af4032c2ccd6989295e80280118da4f5771fc591a7027d2421e40ae237cab097",
         "e17ef86d685931a270f79c5b3fd6917a60368308ff673cc5fdaf055374034c68"
       ],
-      "sourceHeadingCount": 11,
+      "sourceHeadingCount": 12,
       "codeReplacements": [
         {
           "originalSha256": "f79a4907eddbde76921f079c110541c1bea72e75862ce07f6f2bb9450f416edd",

@@ -5,7 +5,7 @@
 
 可直接從官方儲存庫安裝 dae。
 
-或者，可從 [AUR](https://aur.archlinux.org) 或 [archlinuxcn](https://github.com/archlinuxcn/repo) 取得最新的 AVX2 最佳化二進位套件或最新 git 版本。
+或者，可從 [AUR](https://aur.archlinux.org) 或 [archlinuxcn](https://github.com/archlinuxcn/repo) 取得最新的 AVX2 最佳化二進位套件或最新 Git 版本。
 
 ## 官方儲存庫
 
@@ -89,4 +89,4 @@ pacman -S dae-git
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

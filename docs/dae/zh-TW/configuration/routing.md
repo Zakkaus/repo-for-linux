@@ -179,6 +179,9 @@ dip(ext:"yourdatfile.dat:yourtag")->direct
 # >> ip route add default dev wg0 scope global table 1145
 # >> ip -6 route add default dev wg0 scope global table 1145
 # Notice that interface wg0, mark 0x800, table 1145 can be set by preferences, but cannot conflict.
+# Notice also that dae marks its own egress traffic with an internal mark (0x100) unless
+# so_mark_from_dae sets another one: a rule written for *unmarked* traffic does not match
+# dae's own egress, and a rule that matches 0x100 affects dae's own traffic as well.
 # 3. Set routing rules in dae config file.
 domain(geosite:disney) -> direct(mark: 0x800)
 ```
@@ -195,8 +198,19 @@ domain(geosite:cn) -> direct
 fallback: my_group
 ```
 
+## 單一裝置的網域白名單（自動 sniff-punt）
+
+```shell
+mac('aa:bb:cc:dd:ee:ff') && domain(geosite:docker, suffix:quay.io, geosite:github) -> my_group
+mac('aa:bb:cc:dd:ee:ff') -> direct
+```
+
+網域條件需要網域資訊，而這些資訊只有在裝置的 DNS 經過 dae 時才能取得。若裝置使用加密 DNS（DoH/DoT），白名單就會在沒有提示的情況下失效，所有流量都會落入後備規則。dae 會偵測這種規則組合：單一主機的 `mac`／`sip` 選擇器、正向 `domain` 條件，以及後方僅含該選擇器的 `direct`／`block` 後備規則。
+
+dae 會在後備規則前自動插入一條僅供核心空間使用的 sniff-punt 規則，將缺少網域資訊的連線送至使用者空間，嗅探 TLS SNI、HTTP host 或 QUIC，再使用嗅探到的網域依同一組規則重新分流。該裝置不在白名單內的流量仍會落入後備規則，並經由使用者空間轉送。此功能需要啟用嗅探（`sniffing_timeout > 0`、`dial_mode != ip`）；可設定 `auto_sniff_punt: false` 停用。
+
 </div>
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/routing.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/configuration/routing.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

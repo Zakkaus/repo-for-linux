@@ -22,6 +22,8 @@ uname -r
 | 繫結 LAN | `5.17` | 作為中介裝置為 LAN 提供網路服務。<br>僅繫結 LAN 時，只處理來自 LAN 的流量，不影響本機程式。 |
 | `dae trace` | `5.15` | 排查網路連線問題。 |
 
+`arm`、`mips`、`mips64`、`mips64le`、`mipsle` 與 `s390x` 架構的建置不支援 `trace` 建置標籤，因此不提供 `dae trace` 命令。請參閱[建置指南](/zh-TW/dae/user-guide/build-by-yourself#trace-support-per-architecture)。
+
 ## 3. 檢查核心設定
 
 主流桌面發行版通常已啟用這些項目。但為縮減核心大小，OpenWRT、Armbian 等嵌入式裝置發行版預設會停用部分項目。
@@ -91,12 +93,12 @@ zcat /proc/config.gz || cat /boot/{config,config-$(uname -r)}
 ### 特定發行版說明
 
 > **注意**：`Armbian` 使用者可依照[**升級指南**](/zh-TW/dae/user-guide/kernel-upgrade)升級核心，以符合核心設定需求。
-
-> `Arch Linux ARM` 使用者可使用符合 dae 核心設定需求的 [linux-aarch64-7ji](https://github.com/7Ji-PKGBUILDs/linux-aarch64-7ji)。
+>
+> `Arch Linux ARM` 使用者可使用符合 dae 核心設定需求的 [`linux-aarch64-7ji`](https://github.com/7Ji-PKGBUILDs/linux-aarch64-7ji)。
 <!-- quick-start-requirements:end -->
 
 </div>
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

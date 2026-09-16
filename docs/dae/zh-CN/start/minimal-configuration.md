@@ -63,6 +63,23 @@ routing {
 }
 ```
 
+如果你更关注隐私和 DNS 泄漏，而非极致速度，请将上面的 `dns` 部分替换为：
+
+```shell
+dns {
+  upstream {
+    googledns: 'tcp+udp://dns.google:53'
+    alidns: 'udp://dns.alidns.com:53'
+  }
+  routing {
+    request {
+      qname(geosite:cn) -> alidns
+      fallback: googledns
+    }
+  }
+}
+```
+
 ::: details 最小可启动配置
 
 以下最小可启动配置会使 dae 处于无负载状态。
@@ -83,4 +100,4 @@ routing{}
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

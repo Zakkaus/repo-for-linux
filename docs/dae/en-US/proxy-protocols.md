@@ -15,7 +15,7 @@ title: "Proxy protocols"
 | VMess / VLESS | **VMess**: AEAD, alterID=0<br>**Transport**: TCP / WS / gRPC / Meek / HTTPUpgrade<br>**TLS**: Reality | [v2rayN](https://github.com/2dust/v2rayN/wiki/%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E6%A0%BC%E5%BC%8F%E8%AF%B4%E6%98%8E(ver-2))<br>[DuckSoft](https://github.com/XTLS/Xray-core/discussions/716) |
 | Shadowsocks | **Ciphers**: AEAD / Stream Ciphers<br>**Plugins**: simple-obfs / shadow-tls (SIP003)<br>[Plugin notes](#shadowsocks-plugins) | [SIP002](https://shadowsocks.org/doc/sip002.html)<br>[SIP008](https://shadowsocks.org/doc/sip008.html) |
 | ShadowsocksR | — | — |
-| Trojan | Trojan-gfw / Trojan-go | [trojan/trojan-go](https://p4gefau1t.github.io/trojan-go/developer/url/) |
+| Trojan | Trojan-gfw / Trojan-go | [trojan/trojan-go](https://p4gefau1t.github.io/trojan-go/developer/url) |
 | Tuic | **Version**: v5 | [Tuic](https://github.com/daeuniverse/dae/discussions/182) |
 | Juicity | — | [Juicity](https://github.com/juicity/juicity?tab=readme-ov-file#link-format) |
 | Hysteria2 | — | [Hysteria2](https://v2.hysteria.network/docs/developers/URI-Scheme) |
@@ -75,8 +75,51 @@ Although dae and other proxy programs support the HTTPS protocol, using them doe
 
    Users who only bind the LAN interface do not need to perform this step.
 
+## Compatibility notes
+
+### VLESS with XTLS Vision and malformed ServerHello
+
+XTLS Vision can only be enabled once the client has read the cipher suite out
+of the server's `ServerHello`: the Vision padding strategy is derived from it,
+so guessing the suite would corrupt the stream. The VLESS implementation in the outbound layer therefore parses the cipher
+suite only when the handshake message
+is well formed, in particular when `legacy_session_id` is inside the RFC 8446
+section 4.1.2 bound of 0..32 bytes and the message is long enough to contain
+the field.
+
+On a malformed `ServerHello` (session ID longer than 32 bytes, truncated or
+oversized handshake) the cipher suite is left unset, **XTLS Vision is not
+enabled for that connection and the session falls back to a plain VLESS
+relay**: no Vision padding is applied and no protocol error is raised. The
+fail-safe direction is deliberate, because inferring a cipher suite from a
+malformed message would produce wrong padding and break the stream.
+
+This behavior lives in the outbound library that dae depends on; dae itself
+never parses the handshake.
+
+### Congestion control override on QUIC-based protocols
+
+The `tuic`, `juicity` and `hysteria2` node links accept a client-local
+`cc_override` query parameter that selects which congestion controller the
+client installs. It is never sent to the server, and it takes precedence over
+whatever controller the server reports:
+
+```
+tuic://<uuid>:<password>@<server>:<port>?congestion_control=bbr&cc_override=bbr3
+juicity://<uuid>:<password>@<server>:<port>?congestion_control=bbr&cc_override=bbr3
+hysteria2://<auth>:<password>@<server>:443?upmbps=20&downmbps=100&cc_override=bbr3
+```
+
+`tuic` and `juicity` accept `bbr`, `cubic`, `new_reno`, `brutal` and `bbr3`;
+`hysteria2` accepts `bbr`, `brutal` and `bbr3`. The value is lowercased and
+trimmed before it is matched, and an unsupported value fails the node when the
+dialer is constructed instead of silently falling back.
+
+With no `cc_override`, these three protocols install `bbr3`; write
+`cc_override=bbr` on a link to restore the previous stable default for that node.
+
 </div>
 
 ---
 
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/proxy-protocols.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/proxy-protocols.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

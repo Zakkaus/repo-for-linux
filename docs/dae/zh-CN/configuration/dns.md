@@ -69,6 +69,8 @@ tcp+udp://<host>:<port>
 default port: 53
 ```
 
+当响应被截断（`TC=1`，RFC 1035 §4.2.1）时，会按 RFC 7766 §5 的要求通过 TCP 重试：`udp://` 上游会通过 TCP 重试该查询，`tcp+udp://` 上游原本就有此行为。内置目标 `asis` 不会重试，而是将目标服务器的响应原样传给客户端，由客户端决定是否重试，与请求不经过 dae 时一致。其他协议仍使用各自指定的传输方式。
+
 ## 示例
 
 ::: details 完整参考示例
@@ -120,6 +122,8 @@ dns {
         # Match rules from top to bottom.
         request {
             # Built-in outbounds in 'request': asis, reject.
+            # asis queries the server the request was addressed to, as the request arrived.
+            # Do not point other LAN devices at dae:53 (loop risk).
             # You can also use user-defined upstreams.
 
             # Available functions for ordinary DNS requests: qname, qtype.
@@ -175,6 +179,16 @@ dns {
 ```
 
 :::
+
+## 引导解析器（`global`）
+
+`global.bootstrap_resolver` 仅用于 dae 自身的 DNS 路由可用前就必须完成的查询：解析 DNS 上游的主机名，以及 `dial_mode: real-domain` 探测。未设置时，dae 依次尝试 `119.29.29.29:53` 和 `223.5.5.5:53`；设置后只使用指定的解析器，完全替代这两个默认值。中国大陆以外的主机通常应选择距离更近的解析器：
+
+```shell
+global {
+  bootstrap_resolver: '9.9.9.9:53'
+}
+```
 
 ## 模板
 
@@ -236,4 +250,4 @@ dns {
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/dns.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/configuration/dns.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

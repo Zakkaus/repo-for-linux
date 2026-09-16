@@ -123,6 +123,25 @@ systemctl status dae
 
 :::
 
+## Memory and transparent huge pages
+
+`GOMEMLIMIT` is derived from the process's cgroup ceiling, not from a unit
+setting: only `memory.max` participates (the bundled unit no longer sets
+`MemoryHigh`, which the runtime cannot observe as a bound), the derived soft
+limit is 90% of that ceiling, and an explicit `GOMEMLIMIT` environment variable
+always wins.
+
+On a host with transparent huge pages set to `always`, the kernel can inflate
+dae's resident set without the live Go heap growing. `disable_thp: true` opts
+the process out with `prctl(PR_SET_THP_DISABLE)`; the default (`false`) leaves
+the kernel's policy untouched:
+
+```shell
+global {
+  disable_thp: true
+}
+```
+
 ## Check System Logs
 
 ::: code-group
@@ -143,4 +162,4 @@ After completing [Minimal configuration](/dae/start/minimal-configuration), see 
 
 ---
 
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/user-guide/run-as-daemon.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/user-guide/run-as-daemon.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).

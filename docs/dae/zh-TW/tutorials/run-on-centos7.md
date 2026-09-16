@@ -85,6 +85,6 @@ DAE_LOCATION_ASSET=$(pwd) ./dae-linux-x86_64 run -c config.dae
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-centos7.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/tutorials/run-on-centos7.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
 
 上游範例使用 dae v0.2.2 與第三方核心套件庫。本頁保留歷史步驟，不將該版本作為目前的安裝建議。

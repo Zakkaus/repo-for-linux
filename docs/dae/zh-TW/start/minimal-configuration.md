@@ -63,6 +63,23 @@ routing {
 }
 ```
 
+若不追求極致速度，而更重視隱私與避免 DNS 洩漏，請將上方的 `dns` 區段替換為：
+
+```shell
+dns {
+  upstream {
+    googledns: 'tcp+udp://dns.google:53'
+    alidns: 'udp://dns.alidns.com:53'
+  }
+  routing {
+    request {
+      qname(geosite:cn) -> alidns
+      fallback: googledns
+    }
+  }
+}
+```
+
 ::: details 最小可啟動設定
 
 以下最小可啟動設定會使 dae 處於無負載狀態。
@@ -83,4 +100,4 @@ routing{}
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

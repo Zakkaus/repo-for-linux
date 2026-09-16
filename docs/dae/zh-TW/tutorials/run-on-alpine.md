@@ -8,6 +8,7 @@ title: "Alpine Linux"
 
 以下命令使用 OpenRC。已設定 sudo 的一般使用者選擇 sudo 標籤；已進入 root shell 時選擇 root 標籤。
 **注意：**
+
 1. Alpine Linux 3.18 或更新版本原生提供完整 eBPF 支援；較舊版本的 Alpine Linux 需要自行建置核心。
 2. 自 3.20 版本起，因 Alpine Linux 的跨 CPU 架構相容性，Alpine Linux 已正式停用 dae 所需的部分功能，因此預設只能使用 `linux-virt` 執行 dae。若要使用 `linux-lts` 或 `linux-edge`，應自行建置核心。
 3. 本教學適用於 Alpine Linux 3.20 及更新版本。
@@ -126,4 +127,4 @@ chmod 640 /usr/local/etc/dae/config.dae
 
 ---
 
-來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/tutorials/run-on-alpine.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。
+來源：[dae 上游文件](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/tutorials/run-on-alpine.md) · [AGPL-3.0 授權條款](/upstream/dae-LICENSE.txt)。

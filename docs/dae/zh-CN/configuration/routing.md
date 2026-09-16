@@ -179,6 +179,9 @@ dip(ext:"yourdatfile.dat:yourtag")->direct
 # >> ip route add default dev wg0 scope global table 1145
 # >> ip -6 route add default dev wg0 scope global table 1145
 # Notice that interface wg0, mark 0x800, table 1145 can be set by preferences, but cannot conflict.
+# Notice also that dae marks its own egress traffic with an internal mark (0x100) unless
+# so_mark_from_dae sets another one: a rule written for *unmarked* traffic does not match
+# dae's own egress, and a rule that matches 0x100 affects dae's own traffic as well.
 # 3. Set routing rules in dae config file.
 domain(geosite:disney) -> direct(mark: 0x800)
 ```
@@ -195,8 +198,19 @@ domain(geosite:cn) -> direct
 fallback: my_group
 ```
 
+## 按设备限定的域名白名单（自动 sniff-punt）
+
+```shell
+mac('aa:bb:cc:dd:ee:ff') && domain(geosite:docker, suffix:quay.io, geosite:github) -> my_group
+mac('aa:bb:cc:dd:ee:ff') -> direct
+```
+
+域名条件依赖域名信息，只有设备的 DNS 请求经过 dae 才能获得这些信息。如果设备使用加密 DNS（DoH/DoT），白名单原本会在没有提示的情况下失效，设备的所有流量都会落到回退规则。dae 会识别这种规则组合：单主机 `mac`/`sip` 选择器、正向 `domain` 条件，以及位于其后、仅含该选择器的 `direct`/`block` 回退规则。
+
+dae 会在回退规则前自动插入一条仅在内核空间生效的 sniff-punt 规则：将缺少域名信息的连接送到用户空间，嗅探 TLS SNI、HTTP host 或 QUIC，再用嗅探到的域名重新匹配同一组规则。该设备未命中白名单的流量仍会落到回退规则，并经用户空间转发。使用此功能需要启用嗅探（`sniffing_timeout > 0`、`dial_mode != ip`）；可通过 `auto_sniff_punt: false` 关闭。
+
 </div>
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/configuration/routing.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/configuration/routing.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
