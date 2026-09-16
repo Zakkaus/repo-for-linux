@@ -68,7 +68,7 @@ rc-service dae start
 
 ## Enable at boot
 
-This does not start the service immediately.
+Enabling the service at boot does not start it immediately.
 
 ::: code-group
 
@@ -143,4 +143,4 @@ rc-service dae restart
 
 ---
 
-Source: [dae upstream](https://github.com/daeuniverse/dae/blob/1ec85feddc721088ecdda73015bd78f652926b39/docs/en/README.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
+Source: [dae upstream](https://github.com/daeuniverse/dae/blob/fb5eae6c2578e3ec99ae5b2844cb4f4ed93557a5/docs/en/README.md) · [AGPL-3.0 license](/upstream/dae-LICENSE.txt).
