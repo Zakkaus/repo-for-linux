@@ -1,9 +1,16 @@
 <div v-pre lang="zh-CN">
 
 <!-- quick-start-minimal-configuration:start -->
-# 最小配置
+## 最小配置
 
-使用此示例前，请设置网络接口并填写订阅链接。`geoip` 和 `geosite` 规则需要对应的数据文件，参见[运行时依赖](/zh-CN/dae/user-guide/build-by-yourself#运行时依赖)。
+以下是最小可启动配置：
+
+```shell
+global{}
+routing{}
+```
+
+此配置会使 dae 处于无负载状态。要让 dae 处理流量，可使用以下精简配置：
 
 ```shell
 global {
@@ -63,16 +70,22 @@ routing {
 }
 ```
 
-::: details 最小可启动配置
-
-以下最小可启动配置会使 dae 处于无负载状态。
+如果相比极致速度，更重视隐私和防止 DNS 泄漏，请将上面的 `dns` 部分替换为：
 
 ```shell
-global{}
-routing{}
+dns {
+  upstream {
+    googledns: 'tcp+udp://dns.google:53'
+    alidns: 'udp://dns.alidns.com:53'
+  }
+  routing {
+    request {
+      qname(geosite:cn) -> alidns
+      fallback: googledns
+    }
+  }
+}
 ```
-
-:::
 
 更多内容参见 [example.dae](https://github.com/daeuniverse/dae/blob/main/example.dae)。
 
@@ -83,4 +96,4 @@ routing{}
 
 ---
 
-来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/5db27a0028d36e7847bd3796497df952337a20e2/docs/en/README.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。
+来源：[dae 上游文档](https://github.com/daeuniverse/dae/blob/ed92f27457d952b60339e63772e64eaef91698f6/docs/en/README.md) · [AGPL-3.0 许可证](/upstream/dae-LICENSE.txt)。

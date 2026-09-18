@@ -70,6 +70,7 @@ function localeConfig({ lang, label, prefix, description, labels: t, theme }) {
             installation,
             { text: t.minimalConfiguration, link: `${prefix}/dae/start/minimal-configuration` },
             { text: t.serviceManagement, link: `${prefix}/dae/start/service-management` },
+            { text: t.dnsAndPrivateAddresses, link: `${prefix}/dae/start/dns-and-private-addresses` },
             { text: t.pppoe, link: `${prefix}/dae/start/pppoe` }
           ]
         },
